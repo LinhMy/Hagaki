@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HAGAKI</RootNamespace>
     <AssemblyName>HAGAKI</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,8 +33,86 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.BonusSkins.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Charts.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Office.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Pdf.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.RichEdit.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.1.Core">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Sparkline.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1.UI">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.Utils.v17.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraBars.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraCharts.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraCharts.v17.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraCharts.v17.1.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraEditors.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraGrid.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraLayout.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraNavBar.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraPrinting.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraRichEdit.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraTreeList.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.1">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\DevExpress.XtraVerticalGrid.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.ImageBox">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\ImageGlass.ImageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="LibraryLogin">
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\LibraryLogin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\MyDLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -43,17 +122,90 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DataBPO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBPO.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataHagaki.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataHagaki.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MyClass\Global.cs" />
+    <Compile Include="MyForm\FrmChangeZoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MyForm\FrmChangeZoom.designer.cs">
+      <DependentUpon>FrmChangeZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frmCreateBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frmCreateBatch.designer.cs">
+      <DependentUpon>frmCreateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frmManagerBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frmManagerBatch.designer.cs">
+      <DependentUpon>frmManagerBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmUser.designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeServer.designer.cs">
+      <DependentUpon>frm_ChangeServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UcPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\UcPictureBox.designer.cs">
+      <DependentUpon>UcPictureBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <None Include="app.config" />
+    <None Include="DataBPO.dbml.layout">
+      <DependentUpon>DataBPO.dbml</DependentUpon>
+    </None>
+    <None Include="DataHagaki.dbml.layout">
+      <DependentUpon>DataHagaki.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MyForm\FrmChangeZoom.resx">
+      <DependentUpon>FrmChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frmCreateBatch.resx">
+      <DependentUpon>frmCreateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frmManagerBatch.resx">
+      <DependentUpon>frmManagerBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_ChangeServer.resx">
+      <DependentUpon>frm_ChangeServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\UcPictureBox.resx">
+      <DependentUpon>UcPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +214,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataBPO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataHagaki.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataHagaki.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,6 +235,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
