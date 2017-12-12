@@ -102,13 +102,15 @@
     <Reference Include="ImageGlass.ImageBox">
       <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\ImageGlass.ImageBox.dll</HintPath>
     </Reference>
-    <Reference Include="LibraryLogin">
+    <Reference Include="LibraryLogin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\bin\Debug\LibraryLogin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>C:\Users\Administrator\Desktop\Natsu-3item\Natsu-3item\temp\Santei\MyDLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -139,11 +141,29 @@
     <Compile Include="MyForm\FrmChangeZoom.designer.cs">
       <DependentUpon>FrmChangeZoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\FrmCheckDeJP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmCheckDeJP.designer.cs">
+      <DependentUpon>FrmCheckDeJP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FrmChiTietTienDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmChiTietTienDo.designer.cs">
+      <DependentUpon>FrmChiTietTienDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frmCreateBatch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForm\frmCreateBatch.designer.cs">
       <DependentUpon>frmCreateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FrmFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmFeedback.designer.cs">
+      <DependentUpon>FrmFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\FrmMain.cs">
       <SubType>Form</SubType>
@@ -157,17 +177,29 @@
     <Compile Include="MyForm\frmManagerBatch.designer.cs">
       <DependentUpon>frmManagerBatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\FrmNangSuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmNangSuat.designer.cs">
+      <DependentUpon>FrmNangSuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FrmTienDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FrmTienDo.designer.cs">
+      <DependentUpon>FrmTienDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForm\FrmUser.designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\frm_ChangeServer.cs">
+    <Compile Include="MyForm\frm_ExportExcel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForm\frm_ChangeServer.designer.cs">
-      <DependentUpon>frm_ChangeServer.cs</DependentUpon>
+    <Compile Include="MyForm\frm_ExportExcel.designer.cs">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\UcPictureBox.cs">
       <SubType>UserControl</SubType>
@@ -175,9 +207,38 @@
     <Compile Include="MyUserControl\UcPictureBox.designer.cs">
       <DependentUpon>UcPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_FeddBack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_FeddBack.Designer.cs">
+      <DependentUpon>uc_FeddBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_FeedBack_Hagaki.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_FeedBack_Hagaki.Designer.cs">
+      <DependentUpon>uc_FeedBack_Hagaki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_Hagaki.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_Hagaki.Designer.cs">
+      <DependentUpon>uc_Hagaki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\Uc_Hagaki_Check.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\Uc_Hagaki_Check.Designer.cs">
+      <DependentUpon>Uc_Hagaki_Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="app.config" />
+    <None Include="DataBPO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataBPO.dbml.layout">
       <DependentUpon>DataBPO.dbml</DependentUpon>
     </None>
@@ -187,8 +248,17 @@
     <EmbeddedResource Include="MyForm\FrmChangeZoom.resx">
       <DependentUpon>FrmChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmCheckDeJP.resx">
+      <DependentUpon>FrmCheckDeJP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmChiTietTienDo.resx">
+      <DependentUpon>FrmChiTietTienDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frmCreateBatch.resx">
       <DependentUpon>frmCreateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmFeedback.resx">
+      <DependentUpon>FrmFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -196,14 +266,32 @@
     <EmbeddedResource Include="MyForm\frmManagerBatch.resx">
       <DependentUpon>frmManagerBatch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmNangSuat.resx">
+      <DependentUpon>FrmNangSuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FrmTienDo.resx">
+      <DependentUpon>FrmTienDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\frm_ChangeServer.resx">
-      <DependentUpon>frm_ChangeServer.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\frm_ExportExcel.resx">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\UcPictureBox.resx">
       <DependentUpon>UcPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_FeddBack.resx">
+      <DependentUpon>uc_FeddBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_FeedBack_Hagaki.resx">
+      <DependentUpon>uc_FeedBack_Hagaki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_Hagaki.resx">
+      <DependentUpon>uc_Hagaki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\Uc_Hagaki_Check.resx">
+      <DependentUpon>Uc_Hagaki_Check.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,11 +304,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataBPO.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="DataHagaki.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataHagaki.designer.cs</LastGenOutput>
@@ -241,6 +324,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ExportExcel.xlsx" />
+    <None Include="Resources\Productivity.xlsx" />
     <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

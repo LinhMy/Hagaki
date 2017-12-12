@@ -1,41 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="DataHagaki">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataHagaki">
   <DataContextMoniker Name="/DataHagakiDataContext" />
   <nestedChildShapes>
-    <classShape Id="bccc0faf-5d62-4f91-83bc-c40cad3e2035" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
+    <classShape Id="b3679c20-d1cf-4db4-8e03-02e71d4fae7e" absoluteBounds="3.75, 0.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/DataHagakiDataContext/tbl_MissImage_DEJP" />
       <nestedChildShapes>
-        <elementListCompartment Id="6df1fa5a-06e8-4517-ac0c-7d2bfd49f64c" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8935f477-ed53-458d-b89d-2c01aea00e5e" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cb75ed18-a6d3-4331-8d90-9f3d7d194050" absoluteBounds="0.75, 4.75, 2, 4.6554182942708326">
-      <DataClassMoniker Name="/DataHagakiDataContext/tbl_DEJP" />
-      <nestedChildShapes>
-        <elementListCompartment Id="718493b9-126d-4d74-ae2b-e30c852b8f84" absoluteBounds="0.765, 5.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ebcfdc92-489a-46ee-8f0a-bf2975996d89" absoluteBounds="3.75, 4.75, 2, 4.6554182942708326">
-      <DataClassMoniker Name="/DataHagakiDataContext/tbl_DEJP_Backup" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7ef6fbdd-fb9e-41cd-946a-3abee6a290e6" absoluteBounds="3.765, 5.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a7c8449d-1409-4f48-a5fe-77cb9842c2a2" absoluteBounds="6.75, 0.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/DataHagakiDataContext/tbl_Image" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7b23aa02-b0a5-4ef8-8dba-b86368d95fac" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="33a15b21-9dec-41aa-ac4f-19bb623e6f00" absoluteBounds="6.75, 3.75, 2, 1.9631982421875005">
+    <classShape Id="2189cce0-3fe1-47bb-b9ac-95e72dfaffbe" absoluteBounds="6.375, 1, 2, 1.9631982421875003">
       <DataClassMoniker Name="/DataHagakiDataContext/tbl_MissCheck_DEJP" />
       <nestedChildShapes>
-        <elementListCompartment Id="24f4765d-f7f8-4c56-a073-12f092c36358" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bf4e4df0-de80-405a-ada5-0a546b946929" absoluteBounds="6.3900000000000006, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="75764a3d-2591-4dae-ab02-2ea73cfdaa04" absoluteBounds="3.625, 0.625, 2, 2.5401025390625">
+    <classShape Id="5af35d48-c8bf-42e8-a04c-e0aac2b16ede" absoluteBounds="1.25, 2.75, 2, 2.5401025390625">
       <DataClassMoniker Name="/DataHagakiDataContext/tbl_Batch" />
       <nestedChildShapes>
-        <elementListCompartment Id="109cf910-3e2c-46a1-bfee-f9b94e7d8318" absoluteBounds="3.64, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0e57c85a-f7cc-4abc-9323-417352094f5f" absoluteBounds="1.2650000000000001, 3.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd54e63d-e7d9-431a-940b-71dc76ba78e5" absoluteBounds="6.875, 3.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataHagakiDataContext/tbl_DEJP_Backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55fa198b-f905-4f2a-bbf2-dc83f8f3eaed" absoluteBounds="6.89, 4.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd3448b0-51d7-46bc-be4c-ad01e93d5526" absoluteBounds="4.625, 3.625, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataHagakiDataContext/tbl_DEJP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e24c5766-25aa-4c11-8244-9cd64afc4cd8" absoluteBounds="4.64, 4.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80664047-98e0-4364-b7b8-3081e80f3acc" absoluteBounds="0.75, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataHagakiDataContext/tbl_Image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6304d8be-17da-47f8-85f3-bb102b1461e4" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

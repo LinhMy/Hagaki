@@ -35,7 +35,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txt_DateCreate = new DevExpress.XtraEditors.TextEdit();
             this.lb_SoLuongHinh = new DevExpress.XtraEditors.LabelControl();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.btn_CreateBatch = new DevExpress.XtraEditors.SimpleButton();
             this.btn_BrowserImage = new DevExpress.XtraEditors.SimpleButton();
             this.txt_ImagePath = new DevExpress.XtraEditors.TextEdit();
@@ -49,16 +48,15 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ck_ChiaUser = new DevExpress.XtraEditors.CheckEdit();
             this.lbl_SoFolder = new DevExpress.XtraEditors.LabelControl();
+            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PathFolder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserCreate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BatchName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChiaUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Browser
@@ -68,6 +66,7 @@
             this.btn_Browser.Size = new System.Drawing.Size(85, 23);
             this.btn_Browser.TabIndex = 67;
             this.btn_Browser.Text = "Browser...";
+            this.btn_Browser.Visible = false;
             this.btn_Browser.Click += new System.EventHandler(this.btn_Browser_Click);
             // 
             // labelControl8
@@ -77,6 +76,7 @@
             this.labelControl8.Size = new System.Drawing.Size(101, 13);
             this.labelControl8.TabIndex = 65;
             this.labelControl8.Text = "Folder Batch (nhiều):";
+            this.labelControl8.Visible = false;
             // 
             // txt_PathFolder
             // 
@@ -84,11 +84,13 @@
             this.txt_PathFolder.Name = "txt_PathFolder";
             this.txt_PathFolder.Size = new System.Drawing.Size(356, 20);
             this.txt_PathFolder.TabIndex = 66;
+            this.txt_PathFolder.Visible = false;
             this.txt_PathFolder.EditValueChanged += new System.EventHandler(this.txt_PathFolder_EditValueChanged);
             // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // txt_DateCreate
             // 
@@ -108,15 +110,6 @@
             this.lb_SoLuongHinh.Name = "lb_SoLuongHinh";
             this.lb_SoLuongHinh.Size = new System.Drawing.Size(0, 19);
             this.lb_SoLuongHinh.TabIndex = 64;
-            // 
-            // progressBarControl1
-            // 
-            this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarControl1.Location = new System.Drawing.Point(0, 398);
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Properties.Step = 1;
-            this.progressBarControl1.Size = new System.Drawing.Size(632, 40);
-            this.progressBarControl1.TabIndex = 63;
             // 
             // btn_CreateBatch
             // 
@@ -158,6 +151,7 @@
             this.txt_Location.Name = "txt_Location";
             this.txt_Location.Size = new System.Drawing.Size(356, 20);
             this.txt_Location.TabIndex = 59;
+            this.txt_Location.Visible = false;
             // 
             // txt_BatchName
             // 
@@ -208,6 +202,7 @@
             this.labelControl4.Size = new System.Drawing.Size(26, 13);
             this.labelControl4.TabIndex = 50;
             this.labelControl4.Text = "Path:";
+            this.labelControl4.Visible = false;
             // 
             // labelControl2
             // 
@@ -229,14 +224,6 @@
             this.labelControl1.TabIndex = 49;
             this.labelControl1.Text = "CREATE NEW BATCH";
             // 
-            // ck_ChiaUser
-            // 
-            this.ck_ChiaUser.Location = new System.Drawing.Point(499, 167);
-            this.ck_ChiaUser.Name = "ck_ChiaUser";
-            this.ck_ChiaUser.Properties.Caption = "Chia User";
-            this.ck_ChiaUser.Size = new System.Drawing.Size(75, 19);
-            this.ck_ChiaUser.TabIndex = 68;
-            // 
             // lbl_SoFolder
             // 
             this.lbl_SoFolder.Location = new System.Drawing.Point(63, 379);
@@ -244,19 +231,26 @@
             this.lbl_SoFolder.Size = new System.Drawing.Size(0, 13);
             this.lbl_SoFolder.TabIndex = 69;
             // 
+            // progressBarControl1
+            // 
+            this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBarControl1.Location = new System.Drawing.Point(0, 411);
+            this.progressBarControl1.Name = "progressBarControl1";
+            this.progressBarControl1.Size = new System.Drawing.Size(632, 27);
+            this.progressBarControl1.TabIndex = 70;
+            // 
             // FrmCreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 438);
+            this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.lbl_SoFolder);
-            this.Controls.Add(this.ck_ChiaUser);
             this.Controls.Add(this.btn_Browser);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.txt_PathFolder);
             this.Controls.Add(this.txt_DateCreate);
             this.Controls.Add(this.lb_SoLuongHinh);
-            this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btn_CreateBatch);
             this.Controls.Add(this.btn_BrowserImage);
             this.Controls.Add(this.txt_ImagePath);
@@ -276,12 +270,11 @@
             this.Load += new System.EventHandler(this.frmCreateBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_PathFolder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserCreate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BatchName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChiaUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +289,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.TextEdit txt_DateCreate;
         private DevExpress.XtraEditors.LabelControl lb_SoLuongHinh;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
         private DevExpress.XtraEditors.SimpleButton btn_CreateBatch;
         private DevExpress.XtraEditors.SimpleButton btn_BrowserImage;
         private DevExpress.XtraEditors.TextEdit txt_ImagePath;
@@ -310,7 +302,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.CheckEdit ck_ChiaUser;
         private DevExpress.XtraEditors.LabelControl lbl_SoFolder;
+        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
     }
 }

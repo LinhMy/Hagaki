@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        //private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -19,9 +19,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUser));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_DisableUser = new System.Windows.Forms.Button();
             this.cbb_idrole = new System.Windows.Forms.ComboBox();
             this.txt_grouplevel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -46,7 +47,6 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ck_DisableUser = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.btn_DisableUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_grouplevel.Properties)).BeginInit();
@@ -79,6 +79,16 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(992, 75);
             this.panelControl1.TabIndex = 9;
+            // 
+            // btn_DisableUser
+            // 
+            this.btn_DisableUser.Location = new System.Drawing.Point(824, 16);
+            this.btn_DisableUser.Name = "btn_DisableUser";
+            this.btn_DisableUser.Size = new System.Drawing.Size(91, 34);
+            this.btn_DisableUser.TabIndex = 15;
+            this.btn_DisableUser.Text = "Màn Hình Vô Hiệu Hóa User";
+            this.btn_DisableUser.UseVisualStyleBackColor = true;
+            this.btn_DisableUser.Visible = false;
             // 
             // cbb_idrole
             // 
@@ -202,7 +212,8 @@
             this.btn_themuser.Size = new System.Drawing.Size(75, 23);
             this.btn_themuser.TabIndex = 7;
             this.btn_themuser.Text = "&Add";
-            this.btn_themuser.Click += new System.EventHandler(this.btn_themuser_Click);// 
+            this.btn_themuser.Click += new System.EventHandler(this.btn_themuser_Click);
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,8 +316,9 @@
             // btn_delete
             // 
             this.btn_delete.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btn_delete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_delete.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_delete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btn_delete_ButtonClick);
@@ -334,15 +346,6 @@
             this.ck_DisableUser.AutoHeight = false;
             this.ck_DisableUser.Name = "ck_DisableUser";
             this.ck_DisableUser.CheckedChanged += new System.EventHandler(this.ck_DisableUser_CheckedChanged);
-            // 
-            // btn_DisableUser
-            // 
-            this.btn_DisableUser.Location = new System.Drawing.Point(824, 16);
-            this.btn_DisableUser.Name = "btn_DisableUser";
-            this.btn_DisableUser.Size = new System.Drawing.Size(91, 34);
-            this.btn_DisableUser.TabIndex = 15;
-            this.btn_DisableUser.Text = "Màn Hình Vô Hiệu Hóa User";
-            this.btn_DisableUser.UseVisualStyleBackColor = true;
             // 
             // FrmUser
             // 

@@ -117,7 +117,7 @@ namespace HAGAKI.MyForm
             {
                 txt_username.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username").ToString() : "";
                 txt_grouplevel.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level").ToString() : "";
-                txt_password.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password").ToString() : "";
+                //txt_password.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password").ToString() : "";
                 cbb_idrole.SelectedValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole").ToString() : "";
                 txt_FullName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName").ToString() : "";
             }

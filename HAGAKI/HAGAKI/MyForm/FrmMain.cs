@@ -17,19 +17,18 @@ namespace HAGAKI.MyForm
         {
             InitializeComponent();
         }
-
         private void SetValue()
         {
-                lb_SoHinhConLai.Text = (from w in Global.Db.tbl_Images
-                                        where
+            lb_TongSoHinh.Text= (from w in Global.Db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+            lb_SoHinhConLai.Text = (from w in Global.Db.tbl_Images where
                                         w.ReadImageDEJP < 2 && w.fbatchname == Global.StrBatch &&
                                         (w.UserNameDEJP!= Global.StrUsername || w.UserNameDEJP == null || w.UserNameDEJP == "")
                                         select w.idimage).Count().ToString();
-                lb_SoHinhLamDuoc.Text = (from w in Global.Db.tbl_MissImage_DEJPs
+            lb_SoHinhLamDuoc.Text = (from w in Global.Db.tbl_MissImage_DEJPs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
+            lb_fBatchName.Text = Global.StrBatch;
         }
-
         public string GetImage()
         {
                 string temp = (from w in Global.Db.tbl_MissImage_DEJPs
@@ -56,9 +55,10 @@ namespace HAGAKI.MyForm
 
                         }
                     }
-                    catch (Exception i)
+                    catch (Exception)
                     {
                         return "NULL";
+
                     }
                 }
                 else
@@ -95,7 +95,6 @@ namespace HAGAKI.MyForm
                     Global.FlagTong = true;
                     bar_Manager.Enabled = false;
                     btn_Submit_Logout.Enabled = false;
-                    btn_ZoomImage.Enabled = false;
                     btn_Check.Enabled = false;
                 }
                 else if (Global.StrRole == "ADMIN")
@@ -103,18 +102,30 @@ namespace HAGAKI.MyForm
                     Global.FlagTong = false;
                     btn_Start_Submit.Enabled = false;
                     btn_Submit_Logout.Enabled = false;
-                    btn_ZoomImage.Enabled = true;
+                    btn_ZoomImage.Enabled = false;
                     bar_Manager.Enabled = true;
                     btn_Check.Enabled = true;
+                    uc_Hagaki1.Visible = false;
                 }
-                else if ( Global.StrRole == "CHECKERDEJP" || Global.StrRole == "CHECKERDECHU" || Global.StrRole == "CHECKERDESO")
+                else if ( Global.StrRole == "CHECKERDEJP" || Global.StrRole == "CHECKERDECHU")// || Global.StrRole == "CHECKERDESO")
                 {
                     Global.FlagTong = false;
                     btn_Start_Submit.Enabled = false;
                     btn_Submit_Logout.Enabled = false;
-                    btn_ZoomImage.Enabled = true;
+                    btn_ZoomImage.Enabled = false;
                     bar_Manager.Enabled = false;
                     btn_Check.Enabled = true;
+                    uc_Hagaki1.Visible = false;
+                }
+                else
+                {
+                    Global.FlagTong = false;
+                    btn_Start_Submit.Enabled = false;
+                    btn_Submit_Logout.Enabled = false;
+                    btn_ZoomImage.Enabled = false;
+                    bar_Manager.Enabled = false;
+                    btn_Check.Enabled = false;
+                    uc_Hagaki1.Visible = false;
                 }
             }
             catch (Exception i)
@@ -135,7 +146,7 @@ namespace HAGAKI.MyForm
 
                 if (token != Global.StrToken)
                 {
-                    MessageBox.Show(@"User logged on to another PC, please login again!");
+                    MessageBox.Show(@"User này đang login ở máy khác, vui lòng đăng nhập lại");
                     DialogResult = DialogResult.Yes;
                 }
                 if (btn_Start_Submit.Text == @"Start")
@@ -149,36 +160,71 @@ namespace HAGAKI.MyForm
                     string temp = GetImage();
                     if (temp == "NULL")
                     {
-                        SetValue();
-                        btn_Start_Submit.Text = @"Start";
-                        btn_Start_Submit_Click(null, null);
+                        var listResult = Global.Db.GetBatNotFinishDeJP(Global.StrUsername).ToList();
+
+                        if (listResult.Count > 0)
+                        {
+                            if(MessageBox.Show("Hết hình. Bạn có muốn chuyển qua batch "+ listResult[0].fbatchname + " không?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                                btn_Logout_ItemClick(null, null);
+                            else
+                            {
+                                Global.StrBatch = listResult[0].fbatchname;
+                                btn_Start_Submit.Text = @"Start";
+                                btn_Start_Submit_Click(null, null);
+                                SetValue();
+                            }                          
+
                         }
+                        else
+                        {
+                            MessageBox.Show("Hết hình. Vui lòng liên hệ quản lý dự án");
+                            btn_Logout_ItemClick(null, null);
+                        }
+                    }
                     if (temp == "Error"){
-                        MessageBox.Show(@"Can not load image!");
+                        MessageBox.Show(@"Không thể hiển thị hình ảnh. Vui lòng liên hệ IT");
                         btn_Logout_ItemClick(null, null);
                     }
-                    //uc_So1.ResetData();
-                    //uc_Chu1.ResetData();
+                    uc_Hagaki1.ResetData(); 
                     btn_Start_Submit.Text = @"Submit";
+                    btn_ZoomImage.Enabled = false;
+                    btn_Submit_Logout.Enabled = true;
 
                 }
                 else
                 {
                    if (Global.StrRole == "DEJP")
                         {
-                            //uc_Chu1.SaveData(lb_IdImage.Text);
-                            //uc_Chu1.ResetData();
-                           var version = (from w in Global.DbBpo.tbl_Versions
-                                where w.IDProject == Global.StrIdProject
-                                select w.IDVersion).FirstOrDefault();
-                            if (version != Global.Version)
+                        if (uc_Hagaki1.IsEmpty())
+                        {
+                            MessageBox.Show("Tất cả các trường đều trống, vui lòng kiểm tra lại", "Thông báo!");
+                            return;
+                        }
+
+                            string dk = uc_Hagaki1.DieuKienTruong();
+                            if (dk != "Ok")
                             {
-                                MessageBox.Show(@"The current version is out of date, please update to the new version!");
+                                MessageBox.Show(dk);
+                               return;
+                            }
+                            uc_Hagaki1.SaveData(lb_IdImage.Text);
+                            uc_Hagaki1.ResetData();
+                           var version = (from w in Global.DbBpo.tbl_Versions where w.IDProject == Global.StrIdProject select w.IDVersion).FirstOrDefault();
+                            if (version != Global.Version)
+                            {MessageBox.Show(@"The current version is out of date, please update to the new version!");
                                 Process.Start(Global.UrlUpdateVersion);
                                 Application.Exit();
                             }
-
-                        }
+                        SetValue();
+                        btn_Start_Submit.Text = @"Start";
+                        btn_ZoomImage.Enabled = true;
+                        btn_Submit_Logout.Enabled = false;
+                        btn_Start_Submit_Click(null, null);
+                    }
+                   else
+                   {
+                       MessageBox.Show("Bạn không có quyền nhập JP");
+                   }
                         SetValue();
                     }
             }
@@ -194,15 +240,29 @@ namespace HAGAKI.MyForm
             {
                 Global.DbBpo.UpdateTimeLastRequest(Global.StrToken);
                 //Kiểm tra token
-                var token = (from w in Global.DbBpo.tbl_TokenLogins where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject select w.Token).FirstOrDefault();
+                var token = (from w in Global.DbBpo.tbl_TokenLogins
+                             where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject
+                             select w.Token).FirstOrDefault();
 
                 if (token != Global.StrToken)
                 {
                     MessageBox.Show(@"User logged on to another PC, please login again!");
                     DialogResult = DialogResult.Yes;
                 }
-                
-                //uc_Chu1.SaveData(lb_IdImage.Text);
+                if (uc_Hagaki1.IsEmpty())
+                {
+                    MessageBox.Show("Tất cả các trường đều trống, vui lòng kiểm tra lại", "Thông báo!");
+                    return;
+                }
+
+                string dk = uc_Hagaki1.DieuKienTruong();
+                if (dk != "Ok")
+                {
+                    MessageBox.Show(dk);
+
+                    return;
+                }
+                uc_Hagaki1.SaveData(lb_IdImage.Text);
                 btn_Logout_ItemClick(null, null);
             }
             catch (Exception i)
@@ -230,7 +290,6 @@ namespace HAGAKI.MyForm
         }
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
             Global.DbBpo.UpdateTimeLastRequest(Global.StrToken);
             Global.DbBpo.UpdateTimeLogout(Global.StrToken);
             Global.DbBpo.ResetToken(Global.StrUsername, Global.StrIdProject, Global.StrToken);
@@ -251,11 +310,13 @@ namespace HAGAKI.MyForm
             new FrmChangeZoom().ShowDialog();
             Settings.Default.Reload();
             GetImage();
+            btn_Start_Submit.Text = @"Submit";
+            btn_ZoomImage.Enabled = false;
         }
         private void btn_Pause_Click(object sender, EventArgs e)
         {
             //new FrmFreeTime().ShowDialog();
-            Global.DbBpo.UpdateTimeFree(Global.StrToken, Global.FreeTime);
+           // Global.DbBpo.UpdateTimeFree(Global.StrToken, Global.FreeTime);
         }
         private void btn_Batch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -267,16 +328,16 @@ namespace HAGAKI.MyForm
         }
         private void btn_Check_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
-                //new FrmCheckDeChu().ShowDialog();
+           (new FrmCheckDeJP()).ShowDialog();
         }
         private void btn_Progress_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // new FrmTienDo().ShowDialog();
+            new FrmTienDo().ShowDialog();
         }
+      
         private void btn_ExportExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // new FrmExportExcel().ShowDialog();
+           new FrmExportExcel().ShowDialog();
         }
         private void lb_IdImage_Click(object sender, EventArgs e)
         {
@@ -305,5 +366,15 @@ namespace HAGAKI.MyForm
             LockControl(false);
             timer1.Enabled = false;
         }
+
+        private void btn_Productivity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new FrmNangSuat().ShowDialog();
         }
+
+        private void btn_FeedBack_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new FrmFeedback().ShowDialog();
+        }
+    }
 }

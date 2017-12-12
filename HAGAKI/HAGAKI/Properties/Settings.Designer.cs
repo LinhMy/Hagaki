@@ -95,7 +95,7 @@ namespace HAGAKI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1300")]
         public int Zoom_Doc {
             get {
                 return ((int)(this["Zoom_Doc"]));
@@ -107,13 +107,24 @@ namespace HAGAKI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1400")]
         public int Zoom_Ngang {
             get {
                 return ((int)(this["Zoom_Ngang"]));
             }
             set {
                 this["Zoom_Ngang"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.10.248;Initial Catalog=DatabaseDataEntryBPO;Persist Security In" +
+            "fo=True;User ID=sa;Password=BPO@DN#2013")]
+        public string DatabaseDataEntryBPOConnectionString1 {
+            get {
+                return ((string)(this["DatabaseDataEntryBPOConnectionString1"]));
             }
         }
     }

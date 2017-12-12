@@ -33,22 +33,13 @@ namespace HAGAKI
     partial void Inserttbl_Version(tbl_Version instance);
     partial void Updatetbl_Version(tbl_Version instance);
     partial void Deletetbl_Version(tbl_Version instance);
-    partial void Inserttbl_Batch_Entry(tbl_Batch_Entry instance);
-    partial void Updatetbl_Batch_Entry(tbl_Batch_Entry instance);
-    partial void Deletetbl_Batch_Entry(tbl_Batch_Entry instance);
-    partial void Inserttbl_TienDo(tbl_TienDo instance);
-    partial void Updatetbl_TienDo(tbl_TienDo instance);
-    partial void Deletetbl_TienDo(tbl_TienDo instance);
     partial void Inserttbl_TokenLogin(tbl_TokenLogin instance);
     partial void Updatetbl_TokenLogin(tbl_TokenLogin instance);
     partial void Deletetbl_TokenLogin(tbl_TokenLogin instance);
-    partial void Inserttbl_VersionHistory(tbl_VersionHistory instance);
-    partial void Updatetbl_VersionHistory(tbl_VersionHistory instance);
-    partial void Deletetbl_VersionHistory(tbl_VersionHistory instance);
     #endregion
 		
 		public DataBPODataContext() : 
-				base(global::HAGAKI.Properties.Settings.Default.DatabaseDataEntryBPOConnectionString, mappingSource)
+				base(global::HAGAKI.Properties.Settings.Default.DatabaseDataEntryBPOConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -77,11 +68,11 @@ namespace HAGAKI
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ContentChatSocket> ContentChatSockets
+		public System.Data.Linq.Table<tbl_User> tbl_Users
 		{
 			get
 			{
-				return this.GetTable<ContentChatSocket>();
+				return this.GetTable<tbl_User>();
 			}
 		}
 		
@@ -93,139 +84,11 @@ namespace HAGAKI
 			}
 		}
 		
-		public System.Data.Linq.Table<sysdiagram> sysdiagrams
-		{
-			get
-			{
-				return this.GetTable<sysdiagram>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Batch_Entry> tbl_Batch_Entries
-		{
-			get
-			{
-				return this.GetTable<tbl_Batch_Entry>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_ChiNhanh> tbl_ChiNhanhs
-		{
-			get
-			{
-				return this.GetTable<tbl_ChiNhanh>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_ChiTietTienDo> tbl_ChiTietTienDos
-		{
-			get
-			{
-				return this.GetTable<tbl_ChiTietTienDo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Group> tbl_Groups
-		{
-			get
-			{
-				return this.GetTable<tbl_Group>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_LoginTime> tbl_LoginTimes
-		{
-			get
-			{
-				return this.GetTable<tbl_LoginTime>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_NhanVien> tbl_NhanViens
-		{
-			get
-			{
-				return this.GetTable<tbl_NhanVien>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_PhanCong> tbl_PhanCongs
-		{
-			get
-			{
-				return this.GetTable<tbl_PhanCong>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_PhongBan> tbl_PhongBans
-		{
-			get
-			{
-				return this.GetTable<tbl_PhongBan>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Project> tbl_Projects
-		{
-			get
-			{
-				return this.GetTable<tbl_Project>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_Role> tbl_Roles
-		{
-			get
-			{
-				return this.GetTable<tbl_Role>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_TienDo> tbl_TienDos
-		{
-			get
-			{
-				return this.GetTable<tbl_TienDo>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbl_TokenLogin> tbl_TokenLogins
 		{
 			get
 			{
 				return this.GetTable<tbl_TokenLogin>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_User> tbl_Users
-		{
-			get
-			{
-				return this.GetTable<tbl_User>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_User_copy> tbl_User_copies
-		{
-			get
-			{
-				return this.GetTable<tbl_User_copy>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_User_copy1> tbl_User_copy1s
-		{
-			get
-			{
-				return this.GetTable<tbl_User_copy1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_VersionHistory> tbl_VersionHistories
-		{
-			get
-			{
-				return this.GetTable<tbl_VersionHistory>();
 			}
 		}
 		
@@ -483,2103 +346,6 @@ namespace HAGAKI
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ContentChatSocket")]
-	public partial class ContentChatSocket
-	{
-		
-		private string _UserName;
-		
-		private string _Content_chat;
-		
-		private string _GhiChu;
-		
-		private System.Nullable<System.DateTime> _datacreate;
-		
-		public ContentChatSocket()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Content_chat", DbType="NVarChar(500)")]
-		public string Content_chat
-		{
-			get
-			{
-				return this._Content_chat;
-			}
-			set
-			{
-				if ((this._Content_chat != value))
-				{
-					this._Content_chat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datacreate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> datacreate
-		{
-			get
-			{
-				return this._datacreate;
-			}
-			set
-			{
-				if ((this._datacreate != value))
-				{
-					this._datacreate = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Version")]
-	public partial class tbl_Version : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _IDProject;
-		
-		private string _IDVersion;
-		
-		private int _ID_int_auto;
-		
-		private string _MoTaChucNangMoi;
-		
-		private EntitySet<tbl_VersionHistory> _tbl_VersionHistories;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDProjectChanging(string value);
-    partial void OnIDProjectChanged();
-    partial void OnIDVersionChanging(string value);
-    partial void OnIDVersionChanged();
-    partial void OnID_int_autoChanging(int value);
-    partial void OnID_int_autoChanged();
-    partial void OnMoTaChucNangMoiChanging(string value);
-    partial void OnMoTaChucNangMoiChanged();
-    #endregion
-		
-		public tbl_Version()
-		{
-			this._tbl_VersionHistories = new EntitySet<tbl_VersionHistory>(new Action<tbl_VersionHistory>(this.attach_tbl_VersionHistories), new Action<tbl_VersionHistory>(this.detach_tbl_VersionHistories));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this.OnIDProjectChanging(value);
-					this.SendPropertyChanging();
-					this._IDProject = value;
-					this.SendPropertyChanged("IDProject");
-					this.OnIDProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDVersion", DbType="NVarChar(100)")]
-		public string IDVersion
-		{
-			get
-			{
-				return this._IDVersion;
-			}
-			set
-			{
-				if ((this._IDVersion != value))
-				{
-					this.OnIDVersionChanging(value);
-					this.SendPropertyChanging();
-					this._IDVersion = value;
-					this.SendPropertyChanged("IDVersion");
-					this.OnIDVersionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_int_auto", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int ID_int_auto
-		{
-			get
-			{
-				return this._ID_int_auto;
-			}
-			set
-			{
-				if ((this._ID_int_auto != value))
-				{
-					this.OnID_int_autoChanging(value);
-					this.SendPropertyChanging();
-					this._ID_int_auto = value;
-					this.SendPropertyChanged("ID_int_auto");
-					this.OnID_int_autoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTaChucNangMoi", DbType="NVarChar(200)")]
-		public string MoTaChucNangMoi
-		{
-			get
-			{
-				return this._MoTaChucNangMoi;
-			}
-			set
-			{
-				if ((this._MoTaChucNangMoi != value))
-				{
-					this.OnMoTaChucNangMoiChanging(value);
-					this.SendPropertyChanging();
-					this._MoTaChucNangMoi = value;
-					this.SendPropertyChanged("MoTaChucNangMoi");
-					this.OnMoTaChucNangMoiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Version_tbl_VersionHistory", Storage="_tbl_VersionHistories", ThisKey="IDProject", OtherKey="IDProject")]
-		public EntitySet<tbl_VersionHistory> tbl_VersionHistories
-		{
-			get
-			{
-				return this._tbl_VersionHistories;
-			}
-			set
-			{
-				this._tbl_VersionHistories.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_VersionHistories(tbl_VersionHistory entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Version = this;
-		}
-		
-		private void detach_tbl_VersionHistories(tbl_VersionHistory entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_Version = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sysdiagrams")]
-	public partial class sysdiagram
-	{
-		
-		private string _name;
-		
-		private int _principal_id;
-		
-		private int _diagram_id;
-		
-		private System.Nullable<int> _version;
-		
-		private System.Data.Linq.Binary _definition;
-		
-		public sysdiagram()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this._name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_principal_id", DbType="Int NOT NULL")]
-		public int principal_id
-		{
-			get
-			{
-				return this._principal_id;
-			}
-			set
-			{
-				if ((this._principal_id != value))
-				{
-					this._principal_id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diagram_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int diagram_id
-		{
-			get
-			{
-				return this._diagram_id;
-			}
-			set
-			{
-				if ((this._diagram_id != value))
-				{
-					this._diagram_id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_version", DbType="Int")]
-		public System.Nullable<int> version
-		{
-			get
-			{
-				return this._version;
-			}
-			set
-			{
-				if ((this._version != value))
-				{
-					this._version = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary definition
-		{
-			get
-			{
-				return this._definition;
-			}
-			set
-			{
-				if ((this._definition != value))
-				{
-					this._definition = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch_Entry")]
-	public partial class tbl_Batch_Entry : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDBatch;
-		
-		private string _fIDProject;
-		
-		private string _fBatchName;
-		
-		private System.Nullable<System.DateTime> _fDateCreated;
-		
-		private string _fUserCreate;
-		
-		private string _fPathPicture;
-		
-		private string _fLocation;
-		
-		private string _fLoaiPhieu;
-		
-		private string _fSoLuongAnh;
-		
-		private System.Nullable<System.DateTime> _fTimeStart;
-		
-		private System.Nullable<System.DateTime> _fTimeEnd;
-		
-		private System.Nullable<long> _fDeadlineNotificationTime;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDBatchChanging(int value);
-    partial void OnIDBatchChanged();
-    partial void OnfIDProjectChanging(string value);
-    partial void OnfIDProjectChanged();
-    partial void OnfBatchNameChanging(string value);
-    partial void OnfBatchNameChanged();
-    partial void OnfDateCreatedChanging(System.Nullable<System.DateTime> value);
-    partial void OnfDateCreatedChanged();
-    partial void OnfUserCreateChanging(string value);
-    partial void OnfUserCreateChanged();
-    partial void OnfPathPictureChanging(string value);
-    partial void OnfPathPictureChanged();
-    partial void OnfLocationChanging(string value);
-    partial void OnfLocationChanged();
-    partial void OnfLoaiPhieuChanging(string value);
-    partial void OnfLoaiPhieuChanged();
-    partial void OnfSoLuongAnhChanging(string value);
-    partial void OnfSoLuongAnhChanged();
-    partial void OnfTimeStartChanging(System.Nullable<System.DateTime> value);
-    partial void OnfTimeStartChanged();
-    partial void OnfTimeEndChanging(System.Nullable<System.DateTime> value);
-    partial void OnfTimeEndChanged();
-    partial void OnfDeadlineNotificationTimeChanging(System.Nullable<long> value);
-    partial void OnfDeadlineNotificationTimeChanged();
-    #endregion
-		
-		public tbl_Batch_Entry()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBatch", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int IDBatch
-		{
-			get
-			{
-				return this._IDBatch;
-			}
-			set
-			{
-				if ((this._IDBatch != value))
-				{
-					this.OnIDBatchChanging(value);
-					this.SendPropertyChanging();
-					this._IDBatch = value;
-					this.SendPropertyChanged("IDBatch");
-					this.OnIDBatchChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fIDProject
-		{
-			get
-			{
-				return this._fIDProject;
-			}
-			set
-			{
-				if ((this._fIDProject != value))
-				{
-					this.OnfIDProjectChanging(value);
-					this.SendPropertyChanging();
-					this._fIDProject = value;
-					this.SendPropertyChanged("fIDProject");
-					this.OnfIDProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this.OnfBatchNameChanging(value);
-					this.SendPropertyChanging();
-					this._fBatchName = value;
-					this.SendPropertyChanged("fBatchName");
-					this.OnfBatchNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fDateCreated", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fDateCreated
-		{
-			get
-			{
-				return this._fDateCreated;
-			}
-			set
-			{
-				if ((this._fDateCreated != value))
-				{
-					this.OnfDateCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._fDateCreated = value;
-					this.SendPropertyChanged("fDateCreated");
-					this.OnfDateCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fUserCreate", DbType="NVarChar(200)")]
-		public string fUserCreate
-		{
-			get
-			{
-				return this._fUserCreate;
-			}
-			set
-			{
-				if ((this._fUserCreate != value))
-				{
-					this.OnfUserCreateChanging(value);
-					this.SendPropertyChanging();
-					this._fUserCreate = value;
-					this.SendPropertyChanged("fUserCreate");
-					this.OnfUserCreateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fPathPicture", DbType="NVarChar(200)")]
-		public string fPathPicture
-		{
-			get
-			{
-				return this._fPathPicture;
-			}
-			set
-			{
-				if ((this._fPathPicture != value))
-				{
-					this.OnfPathPictureChanging(value);
-					this.SendPropertyChanging();
-					this._fPathPicture = value;
-					this.SendPropertyChanged("fPathPicture");
-					this.OnfPathPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLocation", DbType="NVarChar(200)")]
-		public string fLocation
-		{
-			get
-			{
-				return this._fLocation;
-			}
-			set
-			{
-				if ((this._fLocation != value))
-				{
-					this.OnfLocationChanging(value);
-					this.SendPropertyChanging();
-					this._fLocation = value;
-					this.SendPropertyChanged("fLocation");
-					this.OnfLocationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLoaiPhieu", DbType="NVarChar(200)")]
-		public string fLoaiPhieu
-		{
-			get
-			{
-				return this._fLoaiPhieu;
-			}
-			set
-			{
-				if ((this._fLoaiPhieu != value))
-				{
-					this.OnfLoaiPhieuChanging(value);
-					this.SendPropertyChanging();
-					this._fLoaiPhieu = value;
-					this.SendPropertyChanged("fLoaiPhieu");
-					this.OnfLoaiPhieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fSoLuongAnh", DbType="NVarChar(200)")]
-		public string fSoLuongAnh
-		{
-			get
-			{
-				return this._fSoLuongAnh;
-			}
-			set
-			{
-				if ((this._fSoLuongAnh != value))
-				{
-					this.OnfSoLuongAnhChanging(value);
-					this.SendPropertyChanging();
-					this._fSoLuongAnh = value;
-					this.SendPropertyChanged("fSoLuongAnh");
-					this.OnfSoLuongAnhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fTimeStart", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fTimeStart
-		{
-			get
-			{
-				return this._fTimeStart;
-			}
-			set
-			{
-				if ((this._fTimeStart != value))
-				{
-					this.OnfTimeStartChanging(value);
-					this.SendPropertyChanging();
-					this._fTimeStart = value;
-					this.SendPropertyChanged("fTimeStart");
-					this.OnfTimeStartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fTimeEnd", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fTimeEnd
-		{
-			get
-			{
-				return this._fTimeEnd;
-			}
-			set
-			{
-				if ((this._fTimeEnd != value))
-				{
-					this.OnfTimeEndChanging(value);
-					this.SendPropertyChanging();
-					this._fTimeEnd = value;
-					this.SendPropertyChanged("fTimeEnd");
-					this.OnfTimeEndChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fDeadlineNotificationTime", DbType="BigInt")]
-		public System.Nullable<long> fDeadlineNotificationTime
-		{
-			get
-			{
-				return this._fDeadlineNotificationTime;
-			}
-			set
-			{
-				if ((this._fDeadlineNotificationTime != value))
-				{
-					this.OnfDeadlineNotificationTimeChanging(value);
-					this.SendPropertyChanging();
-					this._fDeadlineNotificationTime = value;
-					this.SendPropertyChanged("fDeadlineNotificationTime");
-					this.OnfDeadlineNotificationTimeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ChiNhanh")]
-	public partial class tbl_ChiNhanh
-	{
-		
-		private string _ChiNhanh;
-		
-		private string _DiaChi;
-		
-		private string _SoDT;
-		
-		private string _GhiChu;
-		
-		public tbl_ChiNhanh()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChiNhanh", DbType="NVarChar(100)")]
-		public string ChiNhanh
-		{
-			get
-			{
-				return this._ChiNhanh;
-			}
-			set
-			{
-				if ((this._ChiNhanh != value))
-				{
-					this._ChiNhanh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(100)")]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this._DiaChi = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDT", DbType="NVarChar(100)")]
-		public string SoDT
-		{
-			get
-			{
-				return this._SoDT;
-			}
-			set
-			{
-				if ((this._SoDT != value))
-				{
-					this._SoDT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(100)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ChiTietTienDo")]
-	public partial class tbl_ChiTietTienDo
-	{
-		
-		private long _id;
-		
-		private string _IDProject;
-		
-		private string _fBatchName;
-		
-		private string _Idimage;
-		
-		private string _UserDeSo;
-		
-		private string _UserDeJP;
-		
-		private System.Nullable<System.DateTime> _DateCreate;
-		
-		public tbl_ChiTietTienDo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150)")]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this._IDProject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150)")]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this._fBatchName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150)")]
-		public string Idimage
-		{
-			get
-			{
-				return this._Idimage;
-			}
-			set
-			{
-				if ((this._Idimage != value))
-				{
-					this._Idimage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeSo", DbType="NVarChar(250)")]
-		public string UserDeSo
-		{
-			get
-			{
-				return this._UserDeSo;
-			}
-			set
-			{
-				if ((this._UserDeSo != value))
-				{
-					this._UserDeSo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeJP", DbType="NVarChar(250)")]
-		public string UserDeJP
-		{
-			get
-			{
-				return this._UserDeJP;
-			}
-			set
-			{
-				if ((this._UserDeJP != value))
-				{
-					this._UserDeJP = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateCreate
-		{
-			get
-			{
-				return this._DateCreate;
-			}
-			set
-			{
-				if ((this._DateCreate != value))
-				{
-					this._DateCreate = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Group")]
-	public partial class tbl_Group
-	{
-		
-		private string _GroupID;
-		
-		private string _GroupName;
-		
-		private string _GhiChu;
-		
-		public tbl_Group()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupID", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string GroupID
-		{
-			get
-			{
-				return this._GroupID;
-			}
-			set
-			{
-				if ((this._GroupID != value))
-				{
-					this._GroupID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupName", DbType="NVarChar(100)")]
-		public string GroupName
-		{
-			get
-			{
-				return this._GroupName;
-			}
-			set
-			{
-				if ((this._GroupName != value))
-				{
-					this._GroupName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(100)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_LoginTime")]
-	public partial class tbl_LoginTime
-	{
-		
-		private string _Username;
-		
-		private System.Nullable<System.DateTime> _TimeLogin;
-		
-		private System.Nullable<System.DateTime> _TimeLogout;
-		
-		private System.Nullable<int> _TimeBlog;
-		
-		private System.Nullable<int> _TimeFree;
-		
-		private System.Nullable<System.DateTime> _LastRequest;
-		
-		private string _MachineName;
-		
-		private string _DomainUsername;
-		
-		private string _IPAddress;
-		
-		private string _Token;
-		
-		private int _ID_int_auto;
-		
-		private string _Project;
-		
-		public tbl_LoginTime()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(100)")]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeLogin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> TimeLogin
-		{
-			get
-			{
-				return this._TimeLogin;
-			}
-			set
-			{
-				if ((this._TimeLogin != value))
-				{
-					this._TimeLogin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeLogout", DbType="DateTime")]
-		public System.Nullable<System.DateTime> TimeLogout
-		{
-			get
-			{
-				return this._TimeLogout;
-			}
-			set
-			{
-				if ((this._TimeLogout != value))
-				{
-					this._TimeLogout = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeBlog", DbType="Int")]
-		public System.Nullable<int> TimeBlog
-		{
-			get
-			{
-				return this._TimeBlog;
-			}
-			set
-			{
-				if ((this._TimeBlog != value))
-				{
-					this._TimeBlog = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeFree", DbType="Int")]
-		public System.Nullable<int> TimeFree
-		{
-			get
-			{
-				return this._TimeFree;
-			}
-			set
-			{
-				if ((this._TimeFree != value))
-				{
-					this._TimeFree = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastRequest", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastRequest
-		{
-			get
-			{
-				return this._LastRequest;
-			}
-			set
-			{
-				if ((this._LastRequest != value))
-				{
-					this._LastRequest = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MachineName", DbType="NVarChar(100)")]
-		public string MachineName
-		{
-			get
-			{
-				return this._MachineName;
-			}
-			set
-			{
-				if ((this._MachineName != value))
-				{
-					this._MachineName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DomainUsername", DbType="NVarChar(100)")]
-		public string DomainUsername
-		{
-			get
-			{
-				return this._DomainUsername;
-			}
-			set
-			{
-				if ((this._DomainUsername != value))
-				{
-					this._DomainUsername = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IPAddress", DbType="NVarChar(100)")]
-		public string IPAddress
-		{
-			get
-			{
-				return this._IPAddress;
-			}
-			set
-			{
-				if ((this._IPAddress != value))
-				{
-					this._IPAddress = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Token", DbType="NVarChar(100)")]
-		public string Token
-		{
-			get
-			{
-				return this._Token;
-			}
-			set
-			{
-				if ((this._Token != value))
-				{
-					this._Token = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_int_auto", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int ID_int_auto
-		{
-			get
-			{
-				return this._ID_int_auto;
-			}
-			set
-			{
-				if ((this._ID_int_auto != value))
-				{
-					this._ID_int_auto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Project", DbType="NVarChar(100)")]
-		public string Project
-		{
-			get
-			{
-				return this._Project;
-			}
-			set
-			{
-				if ((this._Project != value))
-				{
-					this._Project = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_NhanVien")]
-	public partial class tbl_NhanVien
-	{
-		
-		private string _ID_MaNhanVien;
-		
-		private string _FullName;
-		
-		private string _GroupNV;
-		
-		private System.Nullable<System.DateTime> _NgayVaoCongTy;
-		
-		private System.Nullable<System.DateTime> _NgayNghiViec;
-		
-		private string _ChucVu;
-		
-		private string _IDPhongBan;
-		
-		private string _GhiChu;
-		
-		public tbl_NhanVien()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MaNhanVien", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string ID_MaNhanVien
-		{
-			get
-			{
-				return this._ID_MaNhanVien;
-			}
-			set
-			{
-				if ((this._ID_MaNhanVien != value))
-				{
-					this._ID_MaNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100)")]
-		public string FullName
-		{
-			get
-			{
-				return this._FullName;
-			}
-			set
-			{
-				if ((this._FullName != value))
-				{
-					this._FullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupNV", DbType="NVarChar(50)")]
-		public string GroupNV
-		{
-			get
-			{
-				return this._GroupNV;
-			}
-			set
-			{
-				if ((this._GroupNV != value))
-				{
-					this._GroupNV = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayVaoCongTy", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayVaoCongTy
-		{
-			get
-			{
-				return this._NgayVaoCongTy;
-			}
-			set
-			{
-				if ((this._NgayVaoCongTy != value))
-				{
-					this._NgayVaoCongTy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNghiViec", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayNghiViec
-		{
-			get
-			{
-				return this._NgayNghiViec;
-			}
-			set
-			{
-				if ((this._NgayNghiViec != value))
-				{
-					this._NgayNghiViec = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChucVu", DbType="NVarChar(100)")]
-		public string ChucVu
-		{
-			get
-			{
-				return this._ChucVu;
-			}
-			set
-			{
-				if ((this._ChucVu != value))
-				{
-					this._ChucVu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDPhongBan", DbType="NVarChar(100)")]
-		public string IDPhongBan
-		{
-			get
-			{
-				return this._IDPhongBan;
-			}
-			set
-			{
-				if ((this._IDPhongBan != value))
-				{
-					this._IDPhongBan = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_PhanCong")]
-	public partial class tbl_PhanCong
-	{
-		
-		private string _UserName;
-		
-		private string _IDProject;
-		
-		private string _GhiChu;
-		
-		public tbl_PhanCong()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this._IDProject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_PhongBan")]
-	public partial class tbl_PhongBan
-	{
-		
-		private string _IDPhongBan;
-		
-		private string _TenPhong;
-		
-		private string _ChiNhanh;
-		
-		public tbl_PhongBan()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDPhongBan", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string IDPhongBan
-		{
-			get
-			{
-				return this._IDPhongBan;
-			}
-			set
-			{
-				if ((this._IDPhongBan != value))
-				{
-					this._IDPhongBan = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhong", DbType="NVarChar(100)")]
-		public string TenPhong
-		{
-			get
-			{
-				return this._TenPhong;
-			}
-			set
-			{
-				if ((this._TenPhong != value))
-				{
-					this._TenPhong = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChiNhanh", DbType="NVarChar(100)")]
-		public string ChiNhanh
-		{
-			get
-			{
-				return this._ChiNhanh;
-			}
-			set
-			{
-				if ((this._ChiNhanh != value))
-				{
-					this._ChiNhanh = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Project")]
-	public partial class tbl_Project
-	{
-		
-		private string _IDProject;
-		
-		private string _ProjectName;
-		
-		private System.Nullable<System.DateTime> _DateCreate;
-		
-		private System.Nullable<System.DateTime> _Deadline;
-		
-		private string _Status;
-		
-		private System.Nullable<bool> _Enable;
-		
-		private string _Usercreate;
-		
-		private System.Nullable<int> _ThuTuUuTien;
-		
-		private string _GhiChu;
-		
-		public tbl_Project()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this._IDProject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectName", DbType="NVarChar(150)")]
-		public string ProjectName
-		{
-			get
-			{
-				return this._ProjectName;
-			}
-			set
-			{
-				if ((this._ProjectName != value))
-				{
-					this._ProjectName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateCreate
-		{
-			get
-			{
-				return this._DateCreate;
-			}
-			set
-			{
-				if ((this._DateCreate != value))
-				{
-					this._DateCreate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deadline", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Deadline
-		{
-			get
-			{
-				return this._Deadline;
-			}
-			set
-			{
-				if ((this._Deadline != value))
-				{
-					this._Deadline = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(150)")]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enable", DbType="Bit")]
-		public System.Nullable<bool> Enable
-		{
-			get
-			{
-				return this._Enable;
-			}
-			set
-			{
-				if ((this._Enable != value))
-				{
-					this._Enable = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usercreate", DbType="NVarChar(100)")]
-		public string Usercreate
-		{
-			get
-			{
-				return this._Usercreate;
-			}
-			set
-			{
-				if ((this._Usercreate != value))
-				{
-					this._Usercreate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThuTuUuTien", DbType="Int")]
-		public System.Nullable<int> ThuTuUuTien
-		{
-			get
-			{
-				return this._ThuTuUuTien;
-			}
-			set
-			{
-				if ((this._ThuTuUuTien != value))
-				{
-					this._ThuTuUuTien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Role")]
-	public partial class tbl_Role
-	{
-		
-		private string _RoleID;
-		
-		private string _RoleName;
-		
-		private string _GhiChu;
-		
-		public tbl_Role()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string RoleID
-		{
-			get
-			{
-				return this._RoleID;
-			}
-			set
-			{
-				if ((this._RoleID != value))
-				{
-					this._RoleID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleName", DbType="NVarChar(100)")]
-		public string RoleName
-		{
-			get
-			{
-				return this._RoleName;
-			}
-			set
-			{
-				if ((this._RoleName != value))
-				{
-					this._RoleName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(100)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this._GhiChu = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TienDo")]
-	public partial class tbl_TienDo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _id;
-		
-		private string _IDProject;
-		
-		private string _fBatchName;
-		
-		private string _Idimage;
-		
-		private string _TienDoDeSo;
-		
-		private string _TienDoDeJP;
-		
-		private string _UserCheckDeSo;
-		
-		private string _UserCheckDeJP;
-		
-		private System.Nullable<System.DateTime> _DateCreate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(long value);
-    partial void OnidChanged();
-    partial void OnIDProjectChanging(string value);
-    partial void OnIDProjectChanged();
-    partial void OnfBatchNameChanging(string value);
-    partial void OnfBatchNameChanged();
-    partial void OnIdimageChanging(string value);
-    partial void OnIdimageChanged();
-    partial void OnTienDoDeSoChanging(string value);
-    partial void OnTienDoDeSoChanged();
-    partial void OnTienDoDeJPChanging(string value);
-    partial void OnTienDoDeJPChanged();
-    partial void OnUserCheckDeSoChanging(string value);
-    partial void OnUserCheckDeSoChanged();
-    partial void OnUserCheckDeJPChanging(string value);
-    partial void OnUserCheckDeJPChanged();
-    partial void OnDateCreateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateCreateChanged();
-    #endregion
-		
-		public tbl_TienDo()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this.OnIDProjectChanging(value);
-					this.SendPropertyChanging();
-					this._IDProject = value;
-					this.SendPropertyChanged("IDProject");
-					this.OnIDProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this.OnfBatchNameChanging(value);
-					this.SendPropertyChanging();
-					this._fBatchName = value;
-					this.SendPropertyChanged("fBatchName");
-					this.OnfBatchNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Idimage
-		{
-			get
-			{
-				return this._Idimage;
-			}
-			set
-			{
-				if ((this._Idimage != value))
-				{
-					this.OnIdimageChanging(value);
-					this.SendPropertyChanging();
-					this._Idimage = value;
-					this.SendPropertyChanged("Idimage");
-					this.OnIdimageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeSo", DbType="NVarChar(250)")]
-		public string TienDoDeSo
-		{
-			get
-			{
-				return this._TienDoDeSo;
-			}
-			set
-			{
-				if ((this._TienDoDeSo != value))
-				{
-					this.OnTienDoDeSoChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDeSo = value;
-					this.SendPropertyChanged("TienDoDeSo");
-					this.OnTienDoDeSoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeJP", DbType="NVarChar(250)")]
-		public string TienDoDeJP
-		{
-			get
-			{
-				return this._TienDoDeJP;
-			}
-			set
-			{
-				if ((this._TienDoDeJP != value))
-				{
-					this.OnTienDoDeJPChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDeJP = value;
-					this.SendPropertyChanged("TienDoDeJP");
-					this.OnTienDoDeJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeSo", DbType="NVarChar(250)")]
-		public string UserCheckDeSo
-		{
-			get
-			{
-				return this._UserCheckDeSo;
-			}
-			set
-			{
-				if ((this._UserCheckDeSo != value))
-				{
-					this.OnUserCheckDeSoChanging(value);
-					this.SendPropertyChanging();
-					this._UserCheckDeSo = value;
-					this.SendPropertyChanged("UserCheckDeSo");
-					this.OnUserCheckDeSoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeJP", DbType="NVarChar(250)")]
-		public string UserCheckDeJP
-		{
-			get
-			{
-				return this._UserCheckDeJP;
-			}
-			set
-			{
-				if ((this._UserCheckDeJP != value))
-				{
-					this.OnUserCheckDeJPChanging(value);
-					this.SendPropertyChanging();
-					this._UserCheckDeJP = value;
-					this.SendPropertyChanged("UserCheckDeJP");
-					this.OnUserCheckDeJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateCreate
-		{
-			get
-			{
-				return this._DateCreate;
-			}
-			set
-			{
-				if ((this._DateCreate != value))
-				{
-					this.OnDateCreateChanging(value);
-					this.SendPropertyChanging();
-					this._DateCreate = value;
-					this.SendPropertyChanged("DateCreate");
-					this.OnDateCreateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TokenLogin")]
-	public partial class tbl_TokenLogin : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _Id;
-		
-		private string _UserName;
-		
-		private string _IDProject;
-		
-		private string _Token;
-		
-		private System.Nullable<System.DateTime> _DateLogin;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(long value);
-    partial void OnIdChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnIDProjectChanging(string value);
-    partial void OnIDProjectChanged();
-    partial void OnTokenChanging(string value);
-    partial void OnTokenChanged();
-    partial void OnDateLoginChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateLoginChanged();
-    #endregion
-		
-		public tbl_TokenLogin()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(255)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150)")]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this.OnIDProjectChanging(value);
-					this.SendPropertyChanging();
-					this._IDProject = value;
-					this.SendPropertyChanged("IDProject");
-					this.OnIDProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Token", DbType="NVarChar(255)")]
-		public string Token
-		{
-			get
-			{
-				return this._Token;
-			}
-			set
-			{
-				if ((this._Token != value))
-				{
-					this.OnTokenChanging(value);
-					this.SendPropertyChanging();
-					this._Token = value;
-					this.SendPropertyChanged("Token");
-					this.OnTokenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateLogin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateLogin
-		{
-			get
-			{
-				return this._DateLogin;
-			}
-			set
-			{
-				if ((this._DateLogin != value))
-				{
-					this.OnDateLoginChanging(value);
-					this.SendPropertyChanging();
-					this._DateLogin = value;
-					this.SendPropertyChanged("DateLogin");
-					this.OnDateLoginChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_User")]
 	public partial class tbl_User
 	{
@@ -2751,293 +517,19 @@ namespace HAGAKI
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_User_copy")]
-	public partial class tbl_User_copy
-	{
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _IDRole;
-		
-		private string _IDNhanVien;
-		
-		private string _Group_Level;
-		
-		private string _FullName;
-		
-		private System.Nullable<bool> _NotGoodUser;
-		
-		public tbl_User_copy()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(100)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDRole", DbType="NVarChar(100)")]
-		public string IDRole
-		{
-			get
-			{
-				return this._IDRole;
-			}
-			set
-			{
-				if ((this._IDRole != value))
-				{
-					this._IDRole = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNhanVien", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string IDNhanVien
-		{
-			get
-			{
-				return this._IDNhanVien;
-			}
-			set
-			{
-				if ((this._IDNhanVien != value))
-				{
-					this._IDNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group_Level", DbType="NVarChar(100)")]
-		public string Group_Level
-		{
-			get
-			{
-				return this._Group_Level;
-			}
-			set
-			{
-				if ((this._Group_Level != value))
-				{
-					this._Group_Level = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100)")]
-		public string FullName
-		{
-			get
-			{
-				return this._FullName;
-			}
-			set
-			{
-				if ((this._FullName != value))
-				{
-					this._FullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotGoodUser", DbType="Bit")]
-		public System.Nullable<bool> NotGoodUser
-		{
-			get
-			{
-				return this._NotGoodUser;
-			}
-			set
-			{
-				if ((this._NotGoodUser != value))
-				{
-					this._NotGoodUser = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_User_copy1")]
-	public partial class tbl_User_copy1
-	{
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _IDRole;
-		
-		private string _IDNhanVien;
-		
-		private string _Group_Level;
-		
-		private string _FullName;
-		
-		private System.Nullable<bool> _NotGoodUser;
-		
-		public tbl_User_copy1()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(100)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDRole", DbType="NVarChar(100)")]
-		public string IDRole
-		{
-			get
-			{
-				return this._IDRole;
-			}
-			set
-			{
-				if ((this._IDRole != value))
-				{
-					this._IDRole = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNhanVien", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string IDNhanVien
-		{
-			get
-			{
-				return this._IDNhanVien;
-			}
-			set
-			{
-				if ((this._IDNhanVien != value))
-				{
-					this._IDNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group_Level", DbType="NVarChar(100)")]
-		public string Group_Level
-		{
-			get
-			{
-				return this._Group_Level;
-			}
-			set
-			{
-				if ((this._Group_Level != value))
-				{
-					this._Group_Level = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100)")]
-		public string FullName
-		{
-			get
-			{
-				return this._FullName;
-			}
-			set
-			{
-				if ((this._FullName != value))
-				{
-					this._FullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotGoodUser", DbType="Bit")]
-		public System.Nullable<bool> NotGoodUser
-		{
-			get
-			{
-				return this._NotGoodUser;
-			}
-			set
-			{
-				if ((this._NotGoodUser != value))
-				{
-					this._NotGoodUser = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_VersionHistory")]
-	public partial class tbl_VersionHistory : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Version")]
+	public partial class tbl_Version : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _IDProject;
 		
-		private string _Version;
+		private string _IDVersion;
 		
-		private string _GhiChu;
+		private int _ID_int_auto;
 		
-		private string _User;
-		
-		private System.DateTime _NgayThayDoi;
-		
-		private EntityRef<tbl_Version> _tbl_Version;
+		private string _MoTaChucNangMoi;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3045,19 +537,16 @@ namespace HAGAKI
     partial void OnCreated();
     partial void OnIDProjectChanging(string value);
     partial void OnIDProjectChanged();
-    partial void OnVersionChanging(string value);
-    partial void OnVersionChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    partial void OnUserChanging(string value);
-    partial void OnUserChanged();
-    partial void OnNgayThayDoiChanging(System.DateTime value);
-    partial void OnNgayThayDoiChanged();
+    partial void OnIDVersionChanging(string value);
+    partial void OnIDVersionChanged();
+    partial void OnID_int_autoChanging(int value);
+    partial void OnID_int_autoChanged();
+    partial void OnMoTaChucNangMoiChanging(string value);
+    partial void OnMoTaChucNangMoiChanged();
     #endregion
 		
-		public tbl_VersionHistory()
+		public tbl_Version()
 		{
-			this._tbl_Version = default(EntityRef<tbl_Version>);
 			OnCreated();
 		}
 		
@@ -3072,10 +561,6 @@ namespace HAGAKI
 			{
 				if ((this._IDProject != value))
 				{
-					if (this._tbl_Version.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnIDProjectChanging(value);
 					this.SendPropertyChanging();
 					this._IDProject = value;
@@ -3085,116 +570,220 @@ namespace HAGAKI
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Version
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDVersion", DbType="NVarChar(100)")]
+		public string IDVersion
 		{
 			get
 			{
-				return this._Version;
+				return this._IDVersion;
 			}
 			set
 			{
-				if ((this._Version != value))
+				if ((this._IDVersion != value))
 				{
-					this.OnVersionChanging(value);
+					this.OnIDVersionChanging(value);
 					this.SendPropertyChanging();
-					this._Version = value;
-					this.SendPropertyChanged("Version");
-					this.OnVersionChanged();
+					this._IDVersion = value;
+					this.SendPropertyChanged("IDVersion");
+					this.OnIDVersionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(4000) NOT NULL", CanBeNull=false)]
-		public string GhiChu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_int_auto", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int ID_int_auto
 		{
 			get
 			{
-				return this._GhiChu;
+				return this._ID_int_auto;
 			}
 			set
 			{
-				if ((this._GhiChu != value))
+				if ((this._ID_int_auto != value))
 				{
-					this.OnGhiChuChanging(value);
+					this.OnID_int_autoChanging(value);
 					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
+					this._ID_int_auto = value;
+					this.SendPropertyChanged("ID_int_auto");
+					this.OnID_int_autoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User]", Storage="_User", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string User
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTaChucNangMoi", DbType="NVarChar(200)")]
+		public string MoTaChucNangMoi
 		{
 			get
 			{
-				return this._User;
+				return this._MoTaChucNangMoi;
 			}
 			set
 			{
-				if ((this._User != value))
+				if ((this._MoTaChucNangMoi != value))
 				{
-					this.OnUserChanging(value);
+					this.OnMoTaChucNangMoiChanging(value);
 					this.SendPropertyChanging();
-					this._User = value;
-					this.SendPropertyChanged("User");
-					this.OnUserChanged();
+					this._MoTaChucNangMoi = value;
+					this.SendPropertyChanged("MoTaChucNangMoi");
+					this.OnMoTaChucNangMoiChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayThayDoi", DbType="DateTime NOT NULL")]
-		public System.DateTime NgayThayDoi
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TokenLogin")]
+	public partial class tbl_TokenLogin : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _Id;
+		
+		private string _UserName;
+		
+		private string _IDProject;
+		
+		private string _Token;
+		
+		private System.Nullable<System.DateTime> _DateLogin;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(long value);
+    partial void OnIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnIDProjectChanging(string value);
+    partial void OnIDProjectChanged();
+    partial void OnTokenChanging(string value);
+    partial void OnTokenChanged();
+    partial void OnDateLoginChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateLoginChanged();
+    #endregion
+		
+		public tbl_TokenLogin()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long Id
 		{
 			get
 			{
-				return this._NgayThayDoi;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._NgayThayDoi != value))
+				if ((this._Id != value))
 				{
-					this.OnNgayThayDoiChanging(value);
+					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._NgayThayDoi = value;
-					this.SendPropertyChanged("NgayThayDoi");
-					this.OnNgayThayDoiChanged();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_Version_tbl_VersionHistory", Storage="_tbl_Version", ThisKey="IDProject", OtherKey="IDProject", IsForeignKey=true)]
-		public tbl_Version tbl_Version
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(255)")]
+		public string UserName
 		{
 			get
 			{
-				return this._tbl_Version.Entity;
+				return this._UserName;
 			}
 			set
 			{
-				tbl_Version previousValue = this._tbl_Version.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_Version.HasLoadedOrAssignedValue == false)))
+				if ((this._UserName != value))
 				{
+					this.OnUserNameChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_Version.Entity = null;
-						previousValue.tbl_VersionHistories.Remove(this);
-					}
-					this._tbl_Version.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_VersionHistories.Add(this);
-						this._IDProject = value.IDProject;
-					}
-					else
-					{
-						this._IDProject = default(string);
-					}
-					this.SendPropertyChanged("tbl_Version");
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150)")]
+		public string IDProject
+		{
+			get
+			{
+				return this._IDProject;
+			}
+			set
+			{
+				if ((this._IDProject != value))
+				{
+					this.OnIDProjectChanging(value);
+					this.SendPropertyChanging();
+					this._IDProject = value;
+					this.SendPropertyChanged("IDProject");
+					this.OnIDProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Token", DbType="NVarChar(255)")]
+		public string Token
+		{
+			get
+			{
+				return this._Token;
+			}
+			set
+			{
+				if ((this._Token != value))
+				{
+					this.OnTokenChanging(value);
+					this.SendPropertyChanging();
+					this._Token = value;
+					this.SendPropertyChanged("Token");
+					this.OnTokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateLogin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateLogin
+		{
+			get
+			{
+				return this._DateLogin;
+			}
+			set
+			{
+				if ((this._DateLogin != value))
+				{
+					this.OnDateLoginChanging(value);
+					this.SendPropertyChanging();
+					this._DateLogin = value;
+					this.SendPropertyChanged("DateLogin");
+					this.OnDateLoginChanged();
 				}
 			}
 		}

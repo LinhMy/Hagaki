@@ -20,7 +20,7 @@ namespace HAGAKI.MyForm{
         {
             Settings.Default.ZoomImage = Convert.ToInt32(trackBarControl1.EditValue);
             Settings.Default.Save();
-            MessageBox.Show(@"Change zoom successfully!");
+           // MessageBox.Show(@"Change zoom successfully!");
             Close();
         }
     }

@@ -77,7 +77,8 @@
             // 
             // trackBar_Ngang
             // 
-            this.trackBar_Ngang.Location = new System.Drawing.Point(5, 3);
+            this.trackBar_Ngang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.trackBar_Ngang.Location = new System.Drawing.Point(0, 0);
             this.trackBar_Ngang.Maximum = 3000;
             this.trackBar_Ngang.Name = "trackBar_Ngang";
             this.trackBar_Ngang.Size = new System.Drawing.Size(300, 45);
@@ -88,6 +89,7 @@
             // btn_xoayphai
             // 
             this.btn_xoayphai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_xoayphai.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btn_xoayphai.Location = new System.Drawing.Point(597, 4);
             this.btn_xoayphai.Name = "btn_xoayphai";
             this.btn_xoayphai.Size = new System.Drawing.Size(75, 23);
@@ -97,8 +99,8 @@
             // 
             // btn_Xoaytrai
             // 
-            this.btn_Xoaytrai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Xoaytrai.Location = new System.Drawing.Point(516, 4);
+            this.btn_Xoaytrai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Xoaytrai.Location = new System.Drawing.Point(385, 4);
             this.btn_Xoaytrai.Name = "btn_Xoaytrai";
             this.btn_Xoaytrai.Size = new System.Drawing.Size(75, 23);
             this.btn_Xoaytrai.TabIndex = 4;

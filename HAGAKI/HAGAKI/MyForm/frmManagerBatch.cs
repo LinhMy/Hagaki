@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Data;
 using System.Windows.Forms;
 using HAGAKI.MyClass;
 
@@ -97,38 +98,7 @@ namespace HAGAKI.MyForm
                     var batch = (from w in Global.Db.tbl_Batches where w.fBatchName == batchname select w).Single();
                     batch.CongKhaiBatch = false;
                     Global.Db.SubmitChanges();
-                    
-
-                }
-            }
-            else if (e.Column.FieldName == "ChiaUser")
-            {
-                var kt = (from w in Global.Db.tbl_MissImage_DEJPs where w.fBatchName == batchname select w.IdImage).ToList();
-                if (kt.Count > 0)
-                {
-                    MessageBox.Show("Batch này đã được nhập!");
-                }
-                else
-                {
-
-                    bool check = (bool)e.Value;
-                    if (check)
-                    {
-                        var batch = (from w in Global.Db.tbl_Batches where w.fBatchName == batchname select w).Single();
-                        //batch.ChiaUser = true;
-                        Global.Db.SubmitChanges();
-                      //  Global.Db.UpdateBatchChiaUser(batchname);
                     }
-                    else
-                    {
-                        var batch = (from w in Global.Db.tbl_Batches where w.fBatchName == batchname select w).Single();
-                      //  batch.ChiaUser = false;
-                        Global.Db.SubmitChanges();
-                      //  Global.Db.UpdateBatchKhongChiaUser(batchname);
-
-                    }
-
-                }
             }
 
             RefreshBatch();

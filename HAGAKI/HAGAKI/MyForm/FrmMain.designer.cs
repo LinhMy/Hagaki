@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar_System = new DevExpress.XtraBars.BarSubItem();
@@ -51,6 +52,11 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btn_Start_Performance_Test = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Stop_Performance_Test = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.pn_Top = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHinhLamDuoc = new DevExpress.XtraEditors.LabelControl();
@@ -66,6 +72,7 @@
             this.lb_2 = new DevExpress.XtraEditors.LabelControl();
             this.lb_1 = new DevExpress.XtraEditors.LabelControl();
             this.pn_Input = new DevExpress.XtraEditors.PanelControl();
+            this.uc_Hagaki1 = new HAGAKI.MyUserControl.uc_Hagaki();
             this.pn_Button = new DevExpress.XtraEditors.PanelControl();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +84,7 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pn_Top)).BeginInit();
             this.pn_Top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pn_Input)).BeginInit();
@@ -112,9 +120,15 @@
             this.btn_Start_Performance_Test,
             this.btn_Stop_Performance_Test,
             this.skinBarSubItem1,
-            this.btn_ChangePassword});
+            this.btn_ChangePassword,
+            this.barSubItem1,
+            this.barButtonItem1,
+            this.barEditItem1,
+            this.barButtonItem2});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 18;
+            this.barManager1.MaxItemId = 22;
+            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             // 
             // bar2
             // 
@@ -125,7 +139,7 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_System),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_Manager),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Caption, this.bar_Manager, "Manager"),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Check),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ZoomImage),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_FeedBack),
@@ -197,6 +211,7 @@
             this.btn_Productivity.Caption = "Pro&ductivity";
             this.btn_Productivity.Id = 8;
             this.btn_Productivity.Name = "btn_Productivity";
+            this.btn_Productivity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Productivity_ItemClick);
             // 
             // btn_ExportExcel
             // 
@@ -224,6 +239,7 @@
             this.btn_FeedBack.Caption = "Feedback";
             this.btn_FeedBack.Id = 11;
             this.btn_FeedBack.Name = "btn_FeedBack";
+            this.btn_FeedBack.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FeedBack_ItemClick);
             // 
             // btn_ChangePassword
             // 
@@ -243,15 +259,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1066, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1201, 20);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 646);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 694);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1066, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1201, 0);
             // 
             // barDockControlLeft
             // 
@@ -259,15 +275,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 626);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 674);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1066, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1201, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 674);
             // 
             // btn_Start_Performance_Test
             // 
@@ -280,6 +296,36 @@
             this.btn_Stop_Performance_Test.Caption = "Stop";
             this.btn_Stop_Performance_Test.Id = 15;
             this.btn_Stop_Performance_Test.Name = "btn_Stop_Performance_Test";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 18;
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 19;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemTextEdit1;
+            this.barEditItem1.Id = 20;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 21;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // pn_Top
             // 
@@ -296,16 +342,17 @@
             this.pn_Top.Controls.Add(this.lb_5);
             this.pn_Top.Controls.Add(this.lb_2);
             this.pn_Top.Controls.Add(this.lb_1);
+            this.pn_Top.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_Top.Location = new System.Drawing.Point(0, 20);
             this.pn_Top.Name = "pn_Top";
-            this.pn_Top.Size = new System.Drawing.Size(1066, 25);
+            this.pn_Top.Size = new System.Drawing.Size(1201, 25);
             this.pn_Top.TabIndex = 7;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(1118, 6);
+            this.labelControl1.Location = new System.Drawing.Point(1253, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 13);
             this.labelControl1.TabIndex = 13;
@@ -360,7 +407,7 @@
             // lb_UserName
             // 
             this.lb_UserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_UserName.Location = new System.Drawing.Point(843, 6);
+            this.lb_UserName.Location = new System.Drawing.Point(978, 6);
             this.lb_UserName.Name = "lb_UserName";
             this.lb_UserName.Size = new System.Drawing.Size(49, 13);
             this.lb_UserName.TabIndex = 6;
@@ -377,7 +424,7 @@
             // lb_6
             // 
             this.lb_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_6.Location = new System.Drawing.Point(784, 6);
+            this.lb_6.Location = new System.Drawing.Point(919, 6);
             this.lb_6.Name = "lb_6";
             this.lb_6.Size = new System.Drawing.Size(53, 13);
             this.lb_6.TabIndex = 8;
@@ -416,13 +463,22 @@
             this.lb_1.Text = "Batch:";
             // 
             // pn_Input
+            // 
+            this.pn_Input.Controls.Add(this.uc_Hagaki1);
             this.pn_Input.Controls.Add(this.pn_Button);
             this.pn_Input.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pn_Input.Location = new System.Drawing.Point(743, 45);
+            this.pn_Input.Location = new System.Drawing.Point(874, 45);
             this.pn_Input.Name = "pn_Input";
-            this.pn_Input.Size = new System.Drawing.Size(323, 601);
+            this.pn_Input.Size = new System.Drawing.Size(327, 649);
             this.pn_Input.TabIndex = 8;
-           
+            // 
+            // uc_Hagaki1
+            // 
+            this.uc_Hagaki1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_Hagaki1.Location = new System.Drawing.Point(2, 2);
+            this.uc_Hagaki1.Name = "uc_Hagaki1";
+            this.uc_Hagaki1.Size = new System.Drawing.Size(323, 615);
+            this.uc_Hagaki1.TabIndex = 1;
             // 
             // pn_Button
             // 
@@ -430,23 +486,24 @@
             this.pn_Button.Controls.Add(this.btn_Submit_Logout);
             this.pn_Button.Controls.Add(this.btn_Start_Submit);
             this.pn_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pn_Button.Location = new System.Drawing.Point(2, 569);
+            this.pn_Button.Location = new System.Drawing.Point(2, 617);
             this.pn_Button.Name = "pn_Button";
-            this.pn_Button.Size = new System.Drawing.Size(319, 30);
+            this.pn_Button.Size = new System.Drawing.Size(323, 30);
             this.pn_Button.TabIndex = 0;
             // 
             // btn_Pause
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(312, 5);
+            this.btn_Pause.Location = new System.Drawing.Point(234, 5);
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(95, 23);
             this.btn_Pause.TabIndex = 7;
             this.btn_Pause.Text = "Pause (ESC)";
+            this.btn_Pause.Visible = false;
             this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // btn_Submit_Logout
             // 
-            this.btn_Submit_Logout.Location = new System.Drawing.Point(216, 6);
+            this.btn_Submit_Logout.Location = new System.Drawing.Point(127, 6);
             this.btn_Submit_Logout.Name = "btn_Submit_Logout";
             this.btn_Submit_Logout.Size = new System.Drawing.Size(90, 21);
             this.btn_Submit_Logout.TabIndex = 6;
@@ -455,7 +512,7 @@
             // 
             // btn_Start_Submit
             // 
-            this.btn_Start_Submit.Location = new System.Drawing.Point(120, 6);
+            this.btn_Start_Submit.Location = new System.Drawing.Point(27, 6);
             this.btn_Start_Submit.Name = "btn_Start_Submit";
             this.btn_Start_Submit.Size = new System.Drawing.Size(90, 21);
             this.btn_Start_Submit.TabIndex = 5;
@@ -465,16 +522,18 @@
             // pn_Image
             // 
             this.pn_Image.Controls.Add(this.ucPictureBox1);
-            this.pn_Image.Location = new System.Drawing.Point(10, 51);
+            this.pn_Image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_Image.Location = new System.Drawing.Point(0, 45);
             this.pn_Image.Name = "pn_Image";
-            this.pn_Image.Size = new System.Drawing.Size(733, 558);
+            this.pn_Image.Size = new System.Drawing.Size(874, 649);
             this.pn_Image.TabIndex = 0;
             // 
             // ucPictureBox1
             // 
-            this.ucPictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.ucPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPictureBox1.Location = new System.Drawing.Point(2, 2);
             this.ucPictureBox1.Name = "ucPictureBox1";
-            this.ucPictureBox1.Size = new System.Drawing.Size(728, 564);
+            this.ucPictureBox1.Size = new System.Drawing.Size(870, 645);
             this.ucPictureBox1.TabIndex = 0;
             // 
             // timer1
@@ -486,7 +545,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 646);
+            this.ClientSize = new System.Drawing.Size(1201, 694);
             this.Controls.Add(this.pn_Image);
             this.Controls.Add(this.pn_Input);
             this.Controls.Add(this.pn_Top);
@@ -494,14 +553,16 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmMain";
-            this.Text = "Santei";
+            this.Text = "Hagaki";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pn_Top)).EndInit();
             this.pn_Top.ResumeLayout(false);
             this.pn_Top.PerformLayout();
@@ -564,6 +625,12 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private MyUserControl.UcPictureBox ucPictureBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private MyUserControl.uc_Hagaki uc_Hagaki1;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
 
