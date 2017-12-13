@@ -246,6 +246,7 @@
             this.btn_ChangePassword.Caption = "Change Password";
             this.btn_ChangePassword.Id = 17;
             this.btn_ChangePassword.Name = "btn_ChangePassword";
+            this.btn_ChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChangePassword_ItemClick);
             // 
             // skinBarSubItem1
             // 

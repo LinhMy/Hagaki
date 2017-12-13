@@ -136,8 +136,6 @@ namespace HAGAKI.MyForm
                 if (check)
                 {
                     Global.DbBpo.updateNotGoodUser(username, true);
-
-
                 }
                 else
                 {
@@ -145,13 +143,7 @@ namespace HAGAKI.MyForm
                 }
             }
             LoadData();
-        }
-
-        private void ck_DisableUser_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }     
        
     }
 }

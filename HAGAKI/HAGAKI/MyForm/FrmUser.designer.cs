@@ -325,11 +325,11 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "Note";
+            this.gridColumn7.Caption = "UserNoGood";
             this.gridColumn7.FieldName = "NotGoodUser";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.VisibleIndex = 6;
             this.gridColumn7.Width = 111;
             // 
             // gridColumn2
@@ -339,13 +339,12 @@
             this.gridColumn2.FieldName = "DisableUser";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 5;
             // 
             // ck_DisableUser
             // 
             this.ck_DisableUser.AutoHeight = false;
             this.ck_DisableUser.Name = "ck_DisableUser";
-            this.ck_DisableUser.CheckedChanged += new System.EventHandler(this.ck_DisableUser_CheckedChanged);
             // 
             // FrmUser
             // 

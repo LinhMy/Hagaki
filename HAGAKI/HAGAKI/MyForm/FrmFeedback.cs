@@ -96,9 +96,7 @@ namespace HAGAKI.MyForm
                     uc_FeedBack_Hagaki ucF = new uc_FeedBack_Hagaki();
                     ucF.ucPictureBox1.FocusPicture += UcF_FocusPicture;ucF.ucPictureBox1.FocusPictureLeave += UcPictureBox1_FocusPictureLeave;
                     string url = Global.Webservice + cbb_batch.Text + "/" + id;
-
                     ucF.LoadImageUser(cbb_username.Text, cbb_batch.Text, url, id);
-
                     Point p = new Point();
                     foreach (Control ct in pnl_Mainfeedback1.Controls)
                     {
@@ -121,7 +119,6 @@ namespace HAGAKI.MyForm
                     ucF.ucPictureBox1.FocusPictureLeave += UcPictureBox1_FocusPictureLeave;
                     string url = Global.Webservice + cbb_batch.Text + "/" + id;
                     ucF.LoadImageUser(cbb_username.Text, cbb_batch.Text, url, id);
-
                     Point p = new Point();
                     foreach (Control ct in pnl_Mainfeedback1.Controls)
                     {

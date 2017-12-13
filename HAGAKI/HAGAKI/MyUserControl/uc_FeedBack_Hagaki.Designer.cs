@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucPictureBox1 = new HAGAKI.MyUserControl.UcPictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uc_FeddBack3 = new HAGAKI.MyUserControl.uc_FeddBack();
             this.uc_FeddBack2 = new HAGAKI.MyUserControl.uc_FeddBack();
             this.uc_FeddBack1 = new HAGAKI.MyUserControl.uc_FeddBack();
-            this.ucPictureBox1 = new HAGAKI.MyUserControl.UcPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +46,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(697, 507);
             this.panel1.TabIndex = 0;
+            // 
+            // ucPictureBox1
+            // 
+            this.ucPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.ucPictureBox1.Name = "ucPictureBox1";
+            this.ucPictureBox1.Size = new System.Drawing.Size(697, 507);
+            this.ucPictureBox1.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -71,7 +79,7 @@
             // uc_FeddBack3
             // 
             this.uc_FeddBack3.AutoScroll = true;
-            this.uc_FeddBack3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(171)))), ((int)(((byte)(132)))));
+            this.uc_FeddBack3.BackColor = System.Drawing.Color.PeachPuff;
             this.uc_FeddBack3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uc_FeddBack3.Location = new System.Drawing.Point(520, 14);
             this.uc_FeddBack3.Name = "uc_FeddBack3";
@@ -97,14 +105,6 @@
             this.uc_FeddBack1.Name = "uc_FeddBack1";
             this.uc_FeddBack1.Size = new System.Drawing.Size(261, 267);
             this.uc_FeddBack1.TabIndex = 4;
-            // 
-            // ucPictureBox1
-            // 
-            this.ucPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.ucPictureBox1.Name = "ucPictureBox1";
-            this.ucPictureBox1.Size = new System.Drawing.Size(697, 507);
-            this.ucPictureBox1.TabIndex = 0;
             // 
             // uc_FeedBack_Hagaki
             // 

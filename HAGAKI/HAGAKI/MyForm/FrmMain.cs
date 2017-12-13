@@ -376,5 +376,10 @@ namespace HAGAKI.MyForm
         {
             new FrmFeedback().ShowDialog();
         }
+
+        private void btn_ChangePassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_ChangePassword().ShowDialog();
+        }
     }
 }

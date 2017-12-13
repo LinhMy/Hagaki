@@ -107,10 +107,6 @@ namespace HAGAKI.MyForm
                 Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
                 Microsoft.Office.Interop.Excel.Workbook book = app.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
-
-
-
-
                 int h = 2;
                 progressBarControl1.EditValue = 0;
                 progressBarControl1.Properties.Step = 1;
@@ -120,13 +116,11 @@ namespace HAGAKI.MyForm
                 int dem = 1;
                 string temp = "";
                     for (int j = 0; j < dataGrid.RowCount; j += 1)
-                    {
-                    
+                    {                    
                     if (temp == dataGrid[1, j].Value + "")
                         continue;
                     wrksheet.Cells[h, 1] = dem++; //Number#
                     wrksheet.Cells[h, 2] = temp = dataGrid[1, j].Value + ""; //imagename
-
                     wrksheet.Cells[h, 3] = dataGrid[2, j].Value + ""; //1
                     wrksheet.Cells[h, 4] = dataGrid[3, j].Value + ""; //2
                     wrksheet.Cells[h, 5] = dataGrid[4, j].Value + ""; //3
@@ -149,8 +143,8 @@ namespace HAGAKI.MyForm
                     progressBarControl1.Update();
                 }
 
-                //Microsoft.Office.Interop.Excel.Range rowHead = wrksheet.get_Range("A1", "BF" + (h - 1));
-                //rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+                Microsoft.Office.Interop.Excel.Range rowHead = wrksheet.get_Range("A1", "Q" + (h - 1));
+                rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
                 saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
@@ -179,8 +173,7 @@ namespace HAGAKI.MyForm
                 return false;
             }
 
-        }
-    
+        }  
        
        private void btnExportError_Click(object sender, EventArgs e)
         {

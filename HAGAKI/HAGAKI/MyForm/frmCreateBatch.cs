@@ -32,7 +32,6 @@ namespace HAGAKI.MyForm
                 MessageBox.Show(@"Please enter a batch name", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = @"All Types Image|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
 
@@ -87,7 +86,8 @@ namespace HAGAKI.MyForm
                         fPathPicture = txt_ImagePath.Text,
                         fLocation = txt_Location.Text+"\\"+txt_BatchName.Text+"\\",
                         fSoLuongAnh = _soluonghinh.ToString(),
-                        LoaiBatch = "Hagaki",CongKhaiBatch = false
+                        LoaiBatch = "Hagaki",
+                        CongKhaiBatch = false
                         //LoaiBatch = rg_LoaiBatch.Properties.Items[rg_LoaiBatch.SelectedIndex].Description
                     };
                     Global.Db.tbl_Batches.InsertOnSubmit(fBatch);
@@ -100,7 +100,7 @@ namespace HAGAKI.MyForm
             }
             else
             {
-                MessageBox.Show(@"You have not selected an image yet!");
+                MessageBox.Show(@"Chưa hình nào được chọn!");
                 return;
             }
             string temp = Global.StrPath + "\\" + txt_BatchName.Text;
@@ -126,10 +126,7 @@ namespace HAGAKI.MyForm
                 };
                 Global.Db.tbl_Images.InsertOnSubmit(tempImage);
                 Global.Db.SubmitChanges();
-                
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
-
-
                 fi.CopyTo(des);
                 progressBarControl1.PerformStep();progressBarControl1.Update();
             }
@@ -179,8 +176,7 @@ namespace HAGAKI.MyForm
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            
+        {            
             UpLoadSingle();
         }
 

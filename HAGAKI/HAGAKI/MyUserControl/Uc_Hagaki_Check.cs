@@ -23,6 +23,10 @@ namespace HAGAKI.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
+        private void Cbx_GotFocus(object sender, EventArgs e)
+        {
+            ((ComboBoxEdit)sender).SelectAll();
+        }
         private void Rtb_GotFocus(object sender, EventArgs e)
         {
             ((RichTextBox)sender).SelectAll();
@@ -36,7 +40,7 @@ namespace HAGAKI.MyUserControl
             rt_Truong05.GotFocus += Rtb_GotFocus;
             txt_Truong06.GotFocus += Txt_GotFocus;
             txt_Truong07.GotFocus += Txt_GotFocus;
-            //cbx_Truong08.GotFocus += Txt_GotFocus;
+            cbx_Truong08.GotFocus += Cbx_GotFocus;
         }
         private void txt_Truong01_KeyDown(object sender, KeyEventArgs e)
         {
@@ -106,7 +110,7 @@ namespace HAGAKI.MyUserControl
         public bool IsEmpty()
         {
 
-            if (String.IsNullOrEmpty(this.txt_Truong01.Text) &&
+            if (string.IsNullOrEmpty(this.txt_Truong01.Text) &&
                 string.IsNullOrEmpty(this.rt_Truong02.Text) &&
                 string.IsNullOrEmpty(this.rt_Trupng03.Text) &&
                 string.IsNullOrEmpty(this.rt_Truong04.Text) &&

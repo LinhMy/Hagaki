@@ -14,8 +14,7 @@ namespace HAGAKI.MyForm
         }
 
         private void frm_TienDo_Load(object sender, EventArgs e)
-        {
-            
+        {            
             var fBatchName = (from w in Global.Db.tbl_Batches orderby w.IDBatch
                               select new { w.fBatchName }).ToList();
             cbb_Batch.Properties.DataSource = fBatchName;
@@ -71,7 +70,6 @@ namespace HAGAKI.MyForm
         {
             string argument = e.SeriesPoint.Argument;
             var pointValue = e.SeriesPoint.Values[0];
-
             // You can get the argument text using e.SeriesPoint.Argument
             // Set the label text of your point
             if (argument == "Hình chưa nhập")

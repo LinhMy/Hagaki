@@ -90,7 +90,8 @@ namespace HAGAKI.MyForm
 
                     h++;
                 }
-
+                Microsoft.Office.Interop.Excel.Range rowHead = wrksheet.get_Range("A3", "H" + (h +1));
+                rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
                 string savePath;
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Title = @"Save Excel Files";
