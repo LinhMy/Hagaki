@@ -258,6 +258,8 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.Controls.Add(this.cbb_Batch_Check);
             this.panelControl2.Controls.Add(this.lb_Loi);
             this.panelControl2.Controls.Add(this.lb_Image);

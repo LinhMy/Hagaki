@@ -59,7 +59,7 @@ namespace HAGAKI.MyForm
                     n = s2.Length;
                     t1.SelectionStart = n;
                     t1.SelectionLength = s1.Length - s2.Length;
-                    t1.SelectionColor = Color.Red;
+                    t1.SelectionColor = Color.Blue;
                     //t1.SelectionBackColor = Color.Red;
                 }
                 else
@@ -67,7 +67,7 @@ namespace HAGAKI.MyForm
                     n = s1.Length;
                     t2.SelectionStart = n;
                     t2.SelectionLength = s2.Length - s1.Length;
-                    t2.SelectionColor = Color.Red;
+                    t2.SelectionColor = Color.Blue;
                     //t2.SelectionBackColor = Color.Red;
                 }
                 for (int i = 0; i < n; i++)
@@ -76,13 +76,13 @@ namespace HAGAKI.MyForm
                     {
                         t1.SelectionStart = i;
                         t1.SelectionLength = 1;
-                        t1.SelectionColor = Color.Red;
+                        t1.SelectionColor = Color.Blue;
                       
                         //t1.SelectionBackColor = Color.Red;
 
                         t2.SelectionStart = i;
                         t2.SelectionLength = 1;
-                        t2.SelectionColor = Color.Red;
+                        t2.SelectionColor = Color.Blue;
                         //t2.SelectionBackColor = Color.Red;
                     }
                 }
@@ -98,6 +98,8 @@ namespace HAGAKI.MyForm
             int check = s1.CompareTo(s2);
             if (check != 0)
             {
+                if (s1.Length == s2.Length)
+                {
                     for (int i = 0; i < s1.Length; i++)
                     {
                         if (s1[i] != s2[i])
@@ -114,40 +116,27 @@ namespace HAGAKI.MyForm
                             //t2.SelectionBackColor = Color.Red;
                         }
                     }
-                
+                }
 
                 if (s1.Length > s2.Length)
-            {
-                n = s2.Length;
-                t1.SelectionStart = n;
-                m = t1.SelectionLength = s1.Length - s2.Length;
-                t1.SelectionColor = Color.Red;
-                //t1.SelectionBackColor = Color.Red;
-            }
-           
-            else if (s1.Length < s2.Length)
-            {
-                n = s1.Length;
-                t2.SelectionStart = n;
-                m = t2.SelectionLength = s2.Length - s1.Length;
-                //  t2.SelectionColor = Color.Red;
-                //t2.SelectionBackColor = Color.Red;
-                //if (m > 0)
-                //{
-
-                for (int i = 0; i < n; i++)
                 {
-                        if (s1[i] != s2[i + b])
+                    n = s2.Length;
+                    t1.SelectionStart = n;
+                    m = t1.SelectionLength = s1.Length - s2.Length;
+                    //t1.SelectionBackColor = Color.Red;
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (s2[i] != s1[i + b])
                         {
-                            t1.SelectionStart = i;
-                            t1.SelectionLength = 1;
+                            t2.SelectionStart = i;
+                            t2.SelectionLength = 1;
                             //t1.SelectionColor = Color.Red;
 
                             //t1.SelectionBackColor = Color.Red;
 
-                            t2.SelectionStart = i;
-                            t2.SelectionLength = 1;
-                            t2.SelectionColor = Color.Red;
+                            t1.SelectionStart = i;
+                            t1.SelectionLength = 1;
+                            t1.SelectionColor = Color.Red;
                             //t2.SelectionBackColor = Color.Red;
                             int m1 = 1; int a = 0;
                             for (int j = i + 1; j < n + m; j++)
@@ -155,17 +144,17 @@ namespace HAGAKI.MyForm
                                 try
                                 {
 
-                                    if (s1[i + a] == s2[j])
+                                    if (s2[i + a] == s1[j])
                                     {
-                                        t1.SelectionStart = j;
-                                        t1.SelectionLength = 1;
-                                        t1.SelectionColor = Color.Black;
-
-                                        //t1.SelectionBackColor = Color.Red;
-
                                         t2.SelectionStart = j;
                                         t2.SelectionLength = 1;
                                         t2.SelectionColor = Color.Black;
+
+                                        //t1.SelectionBackColor = Color.Red;
+
+                                        t1.SelectionStart = j;
+                                        t1.SelectionLength = 1;
+                                        t1.SelectionColor = Color.Black;
                                         //t2.SelectionBackColor = Color.Red;
                                         a += 1;
                                         // m1 = j - i;
@@ -174,9 +163,9 @@ namespace HAGAKI.MyForm
                                     {
                                         //b += a;
                                         //break;
-                                        t2.SelectionStart = j;
-                                        t2.SelectionLength = 1;
-                                        t2.SelectionColor = Color.Red;
+                                        t1.SelectionStart = j;
+                                        t1.SelectionLength = 1;
+                                        t1.SelectionColor = Color.Red;
 
                                     }
 
@@ -190,15 +179,88 @@ namespace HAGAKI.MyForm
                                 }
                             }
                             return;
-                        } 
+                        }
+                    }
+                }
+
+                else if (s1.Length < s2.Length)
+                {
+                    n = s1.Length;
+                    t2.SelectionStart = n;
+                    m = t2.SelectionLength = s2.Length - s1.Length;
+                    //  t2.SelectionColor = Color.Red;
+                    //t2.SelectionBackColor = Color.Red;
+                    //if (m > 0)
+                    //{
+
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (s1[i] != s2[i + b])
+                        {
+                            t1.SelectionStart = i;
+                            t1.SelectionLength = 1;
+                            //t1.SelectionColor = Color.Red;
+
+                            //t1.SelectionBackColor = Color.Red;
+
+                            t2.SelectionStart = i+b;
+                            t2.SelectionLength = 1;
+                            t2.SelectionColor = Color.Red;
+                            //t2.SelectionBackColor = Color.Red;
+                            int m1 = 1; int a = 0;
+                            for (int j = i + 1; j < n + m; j++)
+                            {
+                                try
+                                {
+
+                                    if (s1[i] == s2[j])
+                                    {
+                                        t1.SelectionStart = j;
+                                        t1.SelectionLength = 1;
+                                        t1.SelectionColor = Color.Black;
+                                        b += j-i;
+                                        //t1.SelectionBackColor = Color.Red;
+
+                                        t2.SelectionStart = j;
+                                        t2.SelectionLength = 1;
+                                        t2.SelectionColor = Color.Black;
+                                        //t2.SelectionBackColor = Color.Red;
+                                        // a += 1;
+                                        // m1 = j - i;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        //
+                                        //break;
+                                        t2.SelectionStart = j;
+                                        t2.SelectionLength = 1;
+                                        t2.SelectionColor = Color.Red;
+                                        t1.SelectionStart = i+a;
+                                        t1.SelectionLength = 1;
+                                        t1.SelectionColor = Color.Red;
+
+                                    }
+
+                                }
+
+                                catch (Exception e)
+                                {
+                                    t2.SelectionStart = j;
+                                    t2.SelectionLength = 1;
+                                    t2.SelectionColor = Color.Red;
+                                }
+                            }
+                            return;
+                        }
+                    }
                 }
             }
-            }
-                        t1.BackColor = Color.PaleVioletRed;
+                t1.BackColor = Color.PaleVioletRed;
                 t2.BackColor = Color.PaleVioletRed;
             
         }
-            private void Compare_ComBoBox(ComboBox t1, ComboBox t2)
+        private void Compare_ComBoBox(ComboBox t1, ComboBox t2)
         {
             if (!string.IsNullOrEmpty(t1.Text) || !string.IsNullOrEmpty(t2.Text))
             {
@@ -239,8 +301,7 @@ namespace HAGAKI.MyForm
         }
 
         private void frm_Check_Load(object sender, EventArgs e)
-        {
-            
+        {            
             try
             {
                 cbb_Batch_Check.DataSource = (from w in Global.Db.GetBatNotFinishCheckerDeJP(Global.StrUsername) select w.fbatchname).ToList();
@@ -268,7 +329,7 @@ namespace HAGAKI.MyForm
             btn_Luu_DeSo2.Visible = false;
             btn_SuaVaLuu_User1.Visible = true;
             btn_SuaVaLuu_User2.Visible = false;
-
+            
         }
 
         private void UcHagaki2_Changed(object sender, EventArgs e)
@@ -435,7 +496,6 @@ namespace HAGAKI.MyForm
                     return;
                 }
                 Global.DbBpo.UpdateTimeLastRequest(Global.StrToken);
-               // Global.Db.LuuDEJP(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername);
                 Global.Db.LuuDEJP(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername);
                 ResetData();
                 var soloi = (from w in Global.Db.GetSoLoi_CheckDeJP(Global.StrBatch) select w.Column1).FirstOrDefault();
@@ -664,8 +724,7 @@ namespace HAGAKI.MyForm
         {
             if (kt)
             {
-                btn_Luu_DeSo1.Enabled = false;
-                
+                btn_Luu_DeSo1.Enabled = false;                
                 btn_Luu_DeSo2.Enabled = false;
                 
             }
@@ -675,6 +734,7 @@ namespace HAGAKI.MyForm
                 btn_Luu_DeSo2.Enabled = true;
             }
         }
-               
+
+      
     }
 }

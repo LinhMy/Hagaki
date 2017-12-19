@@ -79,7 +79,10 @@ namespace HAGAKI.MyUserControl
                         where w.fBatchName == fbatchname && w.IdImage == idimage && w.UserName == "Checker"
                         orderby w.IdImage ascending, w.UserName ascending
                         select w).ToList();
-           uc_FeddBack3.lb_User.Text = deso[0].UserName;
+            var nameCheck = (from w in Global.Db.tbl_MissCheck_DEJPs
+                             where w.fBatchName == fbatchname && w.IdImage == idimage
+                             select w.UserName).FirstOrDefault();
+            uc_FeddBack3.lb_User.Text = nameCheck;//deso[0].UserName;
            uc_FeddBack3.LoadDataChecker(deso[0]);
         }
         
@@ -116,16 +119,18 @@ namespace HAGAKI.MyUserControl
                     txt2.ForeColor = Color.White;
                     txt2.BackColor = Color.Red;
                 }
-                else if (txt2.Text == txt3.Text)
-                {
-                    txt2.ForeColor = Color.White;
-                    txt2.BackColor = Color.Green;
-                }
+                //else if (txt2.Text == txt3.Text)
+                //{
+                //    txt2.ForeColor = Color.White;
+                //    txt2.BackColor = Color.Green;
+                //}
             }
                 if (txt2.Text != txt3.Text)
                 {                   
                     txt2.ForeColor = Color.White;
                     txt2.BackColor = Color.Red;
+                    txt1.ForeColor = Color.White;
+                    txt1.BackColor = Color.Green;
                     txt3.ForeColor = Color.White;
                     txt3.BackColor = Color.Green;
                 if (txt1.Text != txt3.Text)
@@ -133,11 +138,11 @@ namespace HAGAKI.MyUserControl
                     txt1.ForeColor = Color.White;
                     txt1.BackColor = Color.Red;
                 }
-                else if(txt1.Text == txt3.Text)
-                {
-                    txt1.ForeColor = Color.White;
-                    txt1.BackColor = Color.Green;
-                }
+                //else if(txt1.Text == txt3.Text)
+                //{
+                //    txt1.ForeColor = Color.White;
+                //    txt1.BackColor = Color.Green;
+                //}
                 }          
         }                  
         private void SoSanhTextBoxSingle()

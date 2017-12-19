@@ -143,7 +143,7 @@ namespace HAGAKI.MyForm
                 }
             }
             LoadData();
-        }     
-       
+        }
+
     }
 }

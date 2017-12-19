@@ -54,7 +54,6 @@ namespace HAGAKI.MyForm
         {
             string firstdate = dtp_FirstDay.Value.ToString("yyyy-MM-dd") + " 00:00:00";
             string lastdate = dtp_EndDay.Value.ToString("yyyy-MM-dd") + " 23:59:59";
-
             _firstDateTime = DateTime.Parse(firstdate);
             _lastDateTime = DateTime.Parse(lastdate);
             gridControl_LoaiAE.DataSource = null;

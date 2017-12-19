@@ -21,7 +21,7 @@ namespace HAGAKI.MyClass
         public static string StrPath = @"\\10.10.10.248\Hagaki$";
         public static string Webservice="http://10.10.10.248:8888/Hagaki/";
         public static string StrIdProject = "Hagaki";
-        public static string Version = "1.0.9";
+        public static string Version = "1.1.0";
         public static string UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\HAGAKI\Tools";
         public static int FreeTime = 0;
         public static bool FlagTong = false;
